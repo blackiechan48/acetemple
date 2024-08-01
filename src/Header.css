@@ -1,0 +1,46 @@
+/* Header.css */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #343a40;
+  }
+  
+  header img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  header p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: #6c757d;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  header nav a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #007bff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  header nav a:hover {
+    background-color: #e9ecef;
+  }
+  

@@ -1,18 +1,31 @@
+/* Global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  text-align: center; /* Center align text for the whole app */
+}
+
+/* Styles for .App class */
 .App {
   text-align: center;
 }
 
+/* Logo styles */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+/* Animation for logo spin */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+/* Header styles */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,15 +37,22 @@
   color: white;
 }
 
+/* Link styles */
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Media queries */
+@media (max-width: 768px) {
+  /* CSS rules for tablets */
+  .App-header {
+    font-size: calc(10px + 1.5vmin); /* Adjust font size for tablets */
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 480px) {
+  /* CSS rules for mobile */
+  .App-header {
+    font-size: calc(10px + 1vmin); /* Adjust font size for mobile */
   }
 }
