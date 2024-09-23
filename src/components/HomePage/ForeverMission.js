@@ -5,12 +5,22 @@ const Container = styled.div`
   display: flex;
   height: 100vh;
   padding-bottom: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+  }
 `;
 
 const TextSection = styled.div`
   width: 30%;
   padding: 20px;
   background-color: yellow;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 15px;
+  }
 `;
 
 const ImageSection = styled.div`
@@ -21,16 +31,33 @@ const ImageSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
 `;
 
 const Thumbnail = styled.img`
   width: 200px;
   height: 200px;
   transition: width 1s, height 1s;
+
   ${props => props.isActive && css`
     width: 600px;
     height: 600px;
   `}
+
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 150px;
+
+    ${props => props.isActive && css`
+      width: 300px;
+      height: 300px;
+    `}
+  }
 `;
 
 const CallToAction = styled.div`
@@ -39,6 +66,11 @@ const CallToAction = styled.div`
   flex-direction: column;
   margin-top: 20px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    position: relative;
+    margin-top: 10px;
+  }
 `;
 
 const Button = styled.a`
@@ -54,6 +86,11 @@ const Button = styled.a`
   &:hover {
     background-color: #0056b3;
   }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 `;
 
 const ForeverMission = () => {
@@ -64,9 +101,6 @@ const ForeverMission = () => {
     "/images/Home progress pics/Paida.png",
     "/images/Home progress pics/shereen.png",
     "/images/Home progress pics/ali.png",
-    
-
-    
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -74,7 +108,7 @@ const ForeverMission = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000); // Change image every 3 seconds
+    }, 2000); // Change image every 2 seconds
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -83,29 +117,24 @@ const ForeverMission = () => {
     <Container>
       <TextSection>
         <h1>About Olu</h1>
-        {/* <h2>Welcome to my website </h2> */}
-        <p>I'm dedicated personal trainer with almost a decade of experience.
-           I hold a degree in Sports and Exercise from Coventry University and have a background in American football and have taken part 
-           competitive bodybuilding</p>
-           _______________________________________________
-           <h2>My Philosophy</h2>
-           I believe in making fitness enjoyable and sustainable. My goal is to help you achieve results without hating tthe process because thats 
-           the only way to ensure you keep the results. 
-           _______________________________________________
-           <h2> What I Offer </h2>
-            *Custom training plan - Tailored workouts to suit and meet your goals
-            * Nutritional Guidance: Tips for optimal performance and recovery.
-            *Support and Motivation: Consistent encouragement to keep you on track.
-            *Flexibility: In-person and online sessions to suit your schedule.
-            ____________________________________________
-          {/* <h2>Why Choose Me</h2>
-          I've worked with clients from various backgrounds, helping them transform their lives. 
-          I focus on your overall well-being, ensuring a balanced approach to fitness */}
-
-          <CallToAction>
-          <h4>Your transformation is A call away </h4>
-          <Button href="https://calendly.com/acetemple/consultation" target="_blank" rel="noopener noreferrer">
-            Request a call back 
+        <p>I'm a dedicated personal trainer with almost a decade of experience.
+           I hold a degree in Sports and Exercise from Coventry University, have a background in American football, and have competed in bodybuilding.</p>
+        _______________________________________________
+        <h2>My Philosophy</h2>
+        <p>I believe in making fitness enjoyable and sustainable. My goal is to help you achieve results without hating the process because that’s the only way to ensure lasting success.</p>
+        _______________________________________________
+        <h2>What I Offer</h2>
+        <ul>
+          <li>Custom training plan</li>
+          <li>Nutritional guidance</li>
+          <li>Support and motivation</li>
+          <li>Flexibility: In-person and online sessions</li>
+        </ul>
+        _______________________________________________
+        <CallToAction>
+          <h4></h4>
+          <Button href="/testimonials" target="_blank" rel="noopener noreferrer">
+          Click here to see more results
           </Button>
         </CallToAction>
       </TextSection>
@@ -114,9 +143,7 @@ const ForeverMission = () => {
         {images.map((src, index) => (
           <Thumbnail key={index} src={src} isActive={index === activeIndex} />
         ))}
-        
       </ImageSection>
-      
     </Container>
   );
 };

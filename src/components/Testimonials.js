@@ -59,7 +59,7 @@ const TestimonialText = styled.div`
   line-height: 1.6;
   margin: 0;
   padding: 20px;
-  background: #f1f1f1;
+  background: yello;
   border-radius: 8px;
 `;
 
@@ -71,7 +71,7 @@ const Testimonials = () => {
         "https://via.placeholder.com/400",
         "https://via.placeholder.com/400",
       ],
-      text: "This is an amazing testimonial text that captures the essence of the service provided. The experience was outstanding and I highly recommend it to everyone."
+      text: "So glad I was introduced to Olu.. for someone who hated the idea of going to the gym before, I now really see the benefits and enjoy my sessions! Thanks Olu"
     },
     {
       images: [
@@ -79,7 +79,7 @@ const Testimonials = () => {
         "https://via.placeholder.com/400",
         "https://via.placeholder.com/400",
       ],
-      text: "Another great testimonial. The service exceeded my expectations and I am very pleased with the results."
+      text: "Pleased to give a review for Olu's work. Got me back on the fitness bandwagon and worked well despite my past injuries (and forgetting to eat!) holding me back. Got lots of advice and support both on nutrition and fitness and set me up with the basics to keep on getting fitter and stronger! looking forward to working with him again once i'm back in Brum."
     },
     {
       images: [
@@ -87,7 +87,7 @@ const Testimonials = () => {
         "https://via.placeholder.com/400",
         "https://via.placeholder.com/400",
       ],
-      text: "This is an amazing testimonial text that captures the essence of the service provided. The experience was outstanding and I highly recommend it to everyone."
+      text: "Very professional and dedicated to my weight journey . Olu would always check up on my eating plan . Would defo train again with him and recommend to others"
     },
     {
       images: [
@@ -95,7 +95,7 @@ const Testimonials = () => {
         "https://via.placeholder.com/400",
         "https://via.placeholder.com/400",
       ],
-      text: "Another great testimonial. The service exceeded my expectations and I am very pleased with the results."
+      text: "I worked with Ace temple over the past year and cannot stress enough how important that year was in achieving my fitness goals. He really helped me supercharge my results, losing around 20Kg, achieving fitness levels that I wouldn't have achieved on my own. Would recommend anyone considering hiring a PT to give him a shot. You'll be surprised."
     }
     // Add more testimonials as needed
   ];

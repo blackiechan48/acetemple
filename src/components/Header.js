@@ -1,59 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import heroImage from '../assets/images/Hero-image.jpg';
 
 const HeaderContainer = styled.header`
+  position: relative;
   text-align: center;
   padding: 20px;
   background-color: #f8f9fa;
-`;
-
-const Title = styled.h1`
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #343a40;
-`;
-
-const HeroLink = styled.a`
-display: inline-block;
-margin-bottom;
-font-size: 1.5rem;
-`;
-
-const HeroImage = styled.img`
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 20px;
-`;
-
-const Button = styled.a`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #0056b3;
-  }
-`;
-const IntroText = styled.p`
-  font-size: 1.25rem;
-  margin-bottom: 20px;
-  color: #6c757d;
 `;
 
 const Nav = styled.nav`
   display: flex;
   justify-content: center;
   gap: 15px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    display: ${props => (props.isOpen ? 'flex' : 'none')};
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    transform: ${props => (props.isOpen ? 'translateY(0)' : 'translateY(-100%)')};
+  }
 `;
 
 const NavLink = styled.a`
@@ -69,18 +41,47 @@ const NavLink = styled.a`
   }
 `;
 
+const BurgerIcon = styled.div`
+  display: none;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+`;
+
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <HeaderContainer>
-     <Nav>
+      <BurgerIcon onClick={toggleMenu}>
+        <div />
+        <div />
+        <div />
+      </BurgerIcon>
+      <Nav isOpen={isOpen}>
         <NavLink href="/">Home</NavLink>
         <NavLink href="/ForeverMission">About</NavLink>
         <NavLink href="/testimonials">Testimonials</NavLink>
         <NavLink href="/services">Services</NavLink>
-        {/* <NavLink href="/blog">Blog</NavLink> */}
-        <NavLink href="/contact">Contact</NavLink>
+        
       </Nav>
-   
     </HeaderContainer>
   );
 };

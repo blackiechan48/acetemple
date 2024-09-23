@@ -2,15 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FeatureBoxesContainer = styled.div`
-background-color: black;
+  background-color: black;
   display: flex;
   justify-content: space-around;
   margin: 2rem 0;
   padding: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const FeatureBox = styled.div`
-  height 100px;
+  height: auto;
   background-color: #f0f0f0;
   padding: 1rem;
   text-align: center;
@@ -30,12 +35,17 @@ const FeatureBox = styled.div`
     height: 300px;
     border-radius: 8px;
     margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      width: 200px;
+      height: 200px;
+    }
   }
 
   a {
     text-decoration: none;
     color: #000;
-    margin-top: auto; /* Pushes the button to the bottom */
+    margin-top: auto;
   }
 
   button {
@@ -51,6 +61,11 @@ const FeatureBox = styled.div`
   button:hover {
     background-color: #0056b3;
   }
+
+  @media (max-width: 768px) {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
 `;
 
 const Heading = styled.h2`
@@ -58,24 +73,35 @@ const Heading = styled.h2`
   margin-bottom: 2rem;
   font-size: 2rem;
   color: red;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
+
+const SubHeading = styled.p`
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: black;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const FeatureBoxes = () => {
   return (
     <>
       <Heading>Whatever your goals, let's achieve it together</Heading>
-      <p>You don't have to be fit to start, but if you start you will be fit.</p>
-      <p>Whether you have had enough of not feeling confident and you want to achieve a jaw-dropping body transformation or you are just looking to
-         improve your health and fitness so you can lay the foundation for a better quality of life, I know how to make it happen and your wish is
-          my mission.</p>
+      <SubHeading>You don't have to be fit to start, but if you start, you will be fit.</SubHeading>
+      <SubHeading>Whether you're aiming for a body transformation or just improved health, I know how to make it happen.</SubHeading>
       <FeatureBoxesContainer>
         <FeatureBox>
           <img src="/images/pt.png" alt="Personal Training" />
           <h3>Personal Training</h3>
           <p>Get personalized training programs tailored to your goals.</p>
-          <p> Have your sessions meticulously planned by a results-driven personal trainer, ensuring every aspect of your training journey
-             is optimized to fit your lifestyle. While the journey may be challenging, it will also be enjoyable, and you won't regret your 
-             commitment</p>
+          <p>Have sessions meticulously planned by a results-driven trainer. The journey will be challenging but enjoyable.</p>
           <a href="/personalTraining">
             <button>Learn More</button>
           </a>
@@ -84,8 +110,7 @@ const FeatureBoxes = () => {
           <img src="/images/coaching.png" alt="Online Coaching" />
           <h3>Online Coaching</h3>
           <p>Access coaching sessions from the comfort of your home.</p>
-          <p> Achieve incredible results from anywhere in the world. A results-driven approach creates a challenging and efficient workout and lifestyle plan,
-             offering the same, if not greater, accountability as in-person personal training</p>
+          <p>Achieve incredible results from anywhere with a personalized plan and accountability.</p>
           <a href="/online-coaching">
             <button>Learn More</button>
           </a>
@@ -94,10 +119,8 @@ const FeatureBoxes = () => {
           <img src="/images/acebody.png" alt="Challenges" />
           <h3>Challenges</h3>
           <p>Join our fitness challenges and push your limits.</p>
-          <p> Join online challenges alongside like-minded individuals who share the same goal of body transformation. 
-            Participate in a supportive community where everyone is motivated to achieve their fitness goals together, 
-            fostering a sense of camaraderie and accountability as you work towards transforming your body</p>
-          <a href="/online-challenges">
+          <p>Work alongside like-minded individuals in a supportive community to reach your fitness goals.</p>
+          <a href="/2mo">
             <button>Learn More</button>
           </a>
         </FeatureBox>
