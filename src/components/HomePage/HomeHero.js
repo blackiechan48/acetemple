@@ -22,27 +22,27 @@ const HeroContainer = styled.div`
 `;
 
 // Define a styled heading
-const HeroHeading = styled.h1`
-  font-size: 3rem;
-  margin: 0;
-  padding: 0;
+// const HeroHeading = styled.h1`
+//   font-size: 3rem;
+//   margin: 0;
+//   padding: 0;
 
-  @media (max-width: 768px) {
-    font-size: 2.5rem; /* Reduce font size for mobile */
-  }
-`;
+//   @media (max-width: 768px) {
+//     font-size: 2.5rem; /* Reduce font size for mobile */
+//   }
+// `;
 
-// Define a styled subheading
-const HeroSubheading = styled.p`
-  font-size: 1.5rem;
-  margin-top: 10px;
+// // Define a styled subheading
+// const HeroSubheading = styled.p`
+//   font-size: 1.5rem;
+//   margin-top: 10px;
 
-  @media (max-width: 768px) {
-    font-size: 1.2rem; /* Adjust subheading size for mobile */
-  }
-`;
+//   @media (max-width: 768px) {
+//     font-size: 1.2rem; /* Adjust subheading size for mobile */
+//   }
+// `;
 
-// Define a styled button
+// // Define a styled button
 const HeroButton = styled(Link)`
   display: inline-block;
   margin-top: 20px; 

@@ -31,14 +31,14 @@ const HeaderSection = styled.section`
   }
 `;
 
-const HeaderTitle = styled.h1`
-  font-size: 2.5rem;
-  font-weight: bold;
+// const HeaderTitle = styled.h1`
+//   font-size: 2.5rem;
+//   font-weight: bold;
 
-  @media (max-width: 600px) {
-    font-size: 2rem;
-  }
-`;
+//   @media (max-width: 600px) {
+//     font-size: 2rem;
+//   }
+// `;
 
 // Main content section with black background
 const MainSection = styled.section`

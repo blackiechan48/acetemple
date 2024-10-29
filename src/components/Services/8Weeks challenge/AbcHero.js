@@ -44,15 +44,15 @@ const HeroButton = styled(Link)`
     Margin-bottom: 10px;
   }
 `;
-const Subtext = styled.p`
- font-size: 2em;
-  margin-top: 3px;
-  color: red;
+// const Subtext = styled.p`
+//  font-size: 2em;
+//   margin-top: 3px;
+//   color: red;
 
-  @media (max-width: 768px) {
-    font-size: 1em;
-  }
-`;
+//   @media (max-width: 768px) {
+//     font-size: 1em;
+//   }
+// `;
 
 
 const AbcHero =() =>{
