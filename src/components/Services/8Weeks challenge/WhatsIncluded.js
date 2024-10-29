@@ -4,16 +4,16 @@ import styled from 'styled-components';
 const SectionContainer = styled.div`
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
   background: url(/RPReplay_Final1726921791.MP4) no-repeat center center;
-  background-size: cover;
+  background-size: center;
+  background-color:black;
   display: flex;
   justify-content: center;
   align-items: center;
 
   @media (max-width: 768px) {
-    flex-direction: column; /* Stack elements vertically on mobile */
-    padding: 20px;
+    flex-direction: column; 
     justify-content: flex-start;
   }
 `;
@@ -26,7 +26,7 @@ const TextBox = styled.div`
   width: 300px;
 
   @media (max-width: 768px) {
-    width: 90%; /* Make the text box wider to fit screen */
+    width: 90%; 
     position: relative;
     margin-bottom: 20px;
     padding: 15px;
@@ -44,14 +44,27 @@ const Title = styled.h2`
 
 const Subtext = styled.ul`
   font-size: 1rem;
-  line-height: 1.5;
-
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-  }
+  line-height: 1.1;
+  padding-left: 0; 
 
   li {
     margin-bottom: 8px;
+    list-style: none; 
+    position: relative;
+    padding-left: 1.5em; 
+
+    &::before {
+      content: '★';  
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #FFD700;  
+      font-size: 1.2em;  
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
   }
 `;
 

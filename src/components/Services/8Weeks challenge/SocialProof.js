@@ -1,14 +1,14 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-// Sample data for testimonials
+
 const testimonials = [
   "This program changed my life!",
   "I cant believe I acheived this transformation in just 8 weeks!",
   "Highly recommend this challenge to everyone!",
 ];
 
-// Sample data for images (adjust the paths to match your folder structure)
+
 const images = [
   '/images/result progress pics/aqib.png',
   '/images/result progress pics/Damaris.png',
@@ -50,10 +50,10 @@ const ScrollingContainer = styled.div`
   align-items: center;
   overflow: hidden;
   width: 100%;
-  height: 400px;
+  height: 450px;
 
   @media (max-width: 768px) {
-    height: 200px; /* Adjust height for mobile */
+    height: 280px; /* Adjust height for mobile */
   }
 `;
 

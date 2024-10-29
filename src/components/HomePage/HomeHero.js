@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-// Define a styled container for the hero section
+
 const HeroContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 105vh;
   background: url(/homehero.png) no-repeat center center;
   background-size: cover;
   text-align: center;
@@ -45,8 +45,8 @@ const HeroSubheading = styled.p`
 // Define a styled button
 const HeroButton = styled(Link)`
   display: inline-block;
-  margin-top: 20px; /* Adjust margin for better positioning */
-  padding: 12px 24px; /* Increase padding for better touch target on mobile */
+  margin-top: 20px; 
+  padding: 12px 24px; 
   font-size: 1.25rem;
   color: black;
   background-color: red;
@@ -70,8 +70,6 @@ const HeroButton = styled(Link)`
 const Hero = () => {
   return (
     <HeroContainer>
-      {/* <HeroHeading>Welcome to the Transformation</HeroHeading>
-      <HeroSubheading>Achieve your fitness goals with our expert guidance</HeroSubheading> */}
       <HeroButton to="/services">Find out more</HeroButton>
     </HeroContainer>
   );

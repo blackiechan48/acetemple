@@ -9,7 +9,7 @@ const loadStripeButtonScript = () => {
   document.body.appendChild(script);
 };
 
-// Sample images (adjust the paths to match your folder structure)
+
 const images = [
   '/Image 28-12-2020 at 09.22.JPG',
   '/Image 28-12-2020 at 09.48.JPG',
@@ -33,7 +33,7 @@ const Container = styled.div`
 `;
 
 const LeftBox = styled.div`
-  width: 43%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,6 +48,14 @@ const Title = styled.h2`
     font-size: 1em;
   }
 `;
+const Subtext =styled.h4`
+font-size: 1em;
+color: red;
+
+@media (max-width: 768px) {
+font-size: 0.5em;
+}`;
+
 
 const StripeButtonWrapper = styled.div`
   margin-top: 20px;
@@ -96,6 +104,7 @@ const JoinChallenge = () => {
       {/* Left side: Title and Stripe button */}
       <LeftBox>
         <Title>JOIN THE 8 WEEK TRANSFORMATION CHALLENGE NOW </Title>
+        <Subtext>Join now to lose weight, get stronger and get your body goal in just 8 weeks</Subtext>
 
         {/* Stripe Button */}
         <StripeButtonWrapper>

@@ -98,21 +98,21 @@ const FeatureBoxes = () => {
       <SubHeading>Whether you're aiming for a body transformation or just improved health, I know how to make it happen.</SubHeading>
       <FeatureBoxesContainer>
         <FeatureBox>
-          <img src="/images/pt.png" alt="Personal Training" />
-          <h3>Personal Training</h3>
-          <p>Get personalized training programs tailored to your goals.</p>
-          <p>Have sessions meticulously planned by a results-driven trainer. The journey will be challenging but enjoyable.</p>
-          <a href="/personalTraining">
-            <button>Learn More</button>
+        <img src="/images/MonPt.png" alt="Online Coaching" />
+          <h3>Personal training</h3>
+          <p>Personal training based in birmingham.</p>
+          <p>Workouts will be guided and supervised in private sessions</p>
+          <a href="/personaltraining">
+            <button>Find Out More</button>
           </a>
         </FeatureBox>
         <FeatureBox>
-          <img src="/images/coaching.png" alt="Online Coaching" />
+          <img src="images/onlinept.jpg" alt="Online Coaching" />
           <h3>Online Coaching</h3>
           <p>Access coaching sessions from the comfort of your home.</p>
           <p>Achieve incredible results from anywhere with a personalized plan and accountability.</p>
-          <a href="/online-coaching">
-            <button>Learn More</button>
+          <a href="/OnlineCoaching">
+            <button>Find Out More</button>
           </a>
         </FeatureBox>
         <FeatureBox>
@@ -120,8 +120,8 @@ const FeatureBoxes = () => {
           <h3>Challenges</h3>
           <p>Join our fitness challenges and push your limits.</p>
           <p>Work alongside like-minded individuals in a supportive community to reach your fitness goals.</p>
-          <a href="/2mo">
-            <button>Learn More</button>
+          <a href="/8weekschallenge">
+            <button>Find Out More</button>
           </a>
         </FeatureBox>
       </FeatureBoxesContainer>

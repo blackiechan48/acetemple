@@ -32,7 +32,7 @@ const VideoContainer = styled.div`
   width: 100%;
   max-width: 800px;
   aspect-ratio: 16/9;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
   iframe {
     width: 100%;
@@ -41,7 +41,7 @@ const VideoContainer = styled.div`
 `;
 
 const StripeButtonWrapper = styled.div`
-  margin-top: 20px;
+  margin-top: 2px;
 `;
 
 const VideoWithStripeButton = () => {
@@ -52,7 +52,7 @@ const VideoWithStripeButton = () => {
 
   return (
     <Section>
-      {/* YouTube Video */}
+      {/* Paida testiomonial Video */}
       <VideoContainer>
         <iframe
           src="https://www.youtube.com/embed/1ew-winZcks"

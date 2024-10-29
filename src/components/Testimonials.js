@@ -67,33 +67,33 @@ const Testimonials = () => {
   const testimonialsData = [
     {
       images: [
-        "https://via.placeholder.com/400",
-        "https://via.placeholder.com/400",
-        "https://via.placeholder.com/400",
+        "images/result progress pics/ben.png",
+        "images/result progress pics/charlot.png",
+        "images/result progress pics/Damaris.png",
       ],
       text: "So glad I was introduced to Olu.. for someone who hated the idea of going to the gym before, I now really see the benefits and enjoy my sessions! Thanks Olu"
     },
     {
       images: [
-        "https://via.placeholder.com/400",
-        "https://via.placeholder.com/400",
-        "https://via.placeholder.com/400",
+        "images/result progress pics/greek.png",
+        "images/result progress pics/P.png",
+        "images/result progress pics/sike.png",
       ],
       text: "Pleased to give a review for Olu's work. Got me back on the fitness bandwagon and worked well despite my past injuries (and forgetting to eat!) holding me back. Got lots of advice and support both on nutrition and fitness and set me up with the basics to keep on getting fitter and stronger! looking forward to working with him again once i'm back in Brum."
     },
     {
       images: [
-        "https://via.placeholder.com/400",
-        "https://via.placeholder.com/400",
-        "https://via.placeholder.com/400",
+        "images/result progress pics/client.JPG",
+        "images/result progress pics/Sheila.JPG",
+        "images/result progress pics/client2.JPG",
       ],
       text: "Very professional and dedicated to my weight journey . Olu would always check up on my eating plan . Would defo train again with him and recommend to others"
     },
     {
       images: [
-        "https://via.placeholder.com/400",
-        "https://via.placeholder.com/400",
-        "https://via.placeholder.com/400",
+        "images/result progress pics/Michael.JPG",
+        "images/result progress pics/Ali.JPG",
+        "images/result progress pics/siamanta.JPG",
       ],
       text: "I worked with Ace temple over the past year and cannot stress enough how important that year was in achieving my fitness goals. He really helped me supercharge my results, losing around 20Kg, achieving fitness levels that I wouldn't have achieved on my own. Would recommend anyone considering hiring a PT to give him a shot. You'll be surprised."
     }

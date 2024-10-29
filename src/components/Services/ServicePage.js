@@ -114,7 +114,7 @@ const Services = () => {
           <Description>
             Access coaching sessions from the comfort of your home. Achieve incredible results from anywhere in the world with a results-driven approach.
           </Description>
-          <a href="/2mo">
+          <a href="/OnlineCoaching">
             <LearnMoreButton>Learn More</LearnMoreButton>
           </a>
         </ServiceOption>

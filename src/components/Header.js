@@ -77,7 +77,7 @@ const Header = () => {
       </BurgerIcon>
       <Nav isOpen={isOpen}>
         <NavLink href="/">Home</NavLink>
-        <NavLink href="/ForeverMission">About</NavLink>
+        <NavLink href="/AboutPage">About</NavLink>
         <NavLink href="/testimonials">Testimonials</NavLink>
         <NavLink href="/services">Services</NavLink>
         

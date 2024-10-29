@@ -7,8 +7,8 @@ import { faInstagram, faFacebook, faWhatsapp } from '@fortawesome/free-brands-sv
 
 // Define a styled text
 const Text = styled.p`
-  font-size: 1.25rem;
-  margin-top: 20px;
+  font-size: 1rem;
+  margin-top: 2px;
   color: #6c757d;
   text-align: center;
 `;
@@ -20,7 +20,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: yellow;
-  padding: 20px;
+  padding: 1px;
 `;
 
 // Define a styled link container
@@ -29,7 +29,7 @@ const LinksContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
 `;
 
 // Define a styled link
@@ -37,7 +37,7 @@ const StyledLink = styled(Link)`
   color: #007BFF;
   text-decoration: none;
   font-size: 16px;
-  margin: 0 10px;
+  margin: 0 1.2px;
 
   &:hover {
     text-decoration: underline;
@@ -48,7 +48,7 @@ const StyledLink = styled(Link)`
 const SocialLink = styled.a`
   color: #007BFF;
   font-size: 24px;
-  margin: 0 10px;
+  margin: 0 1px;
   text-decoration: none;
 
   &:hover {

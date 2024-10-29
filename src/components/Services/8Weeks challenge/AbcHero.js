@@ -8,7 +8,7 @@ const HeroContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 119vh;
   background: url(/ABCHERO.png) no-repeat center center;
   background-size: cover;
   text-align: center;
@@ -16,39 +16,50 @@ const HeroContainer = styled.div`
 
   @media (max-width: 768px) {
     background-size: contain;
-    height: auto; /* Adjust height for smaller screens */
-    padding: 0 20px; /* Add some padding for mobile */
+    height: auto; 
+    padding: 0 20px; 
 }
 `;
 
 
 const HeroButton = styled(Link)`
   display: inline-block;
-  margin-top: 18px; /* Adjust margin for better positioning */
-  padding: 12px 24px; /* Increase padding for better touch target on mobile */
+  margin-top: 18px; 
+  padding: 12px 24px; 
   font-size: 1.25rem;
   color: black;
   background-color: red;
   text-decoration: none;
   border-radius: 5px;
-  margin-top: 480px;
+  margin-top: 520px;
 
   &:hover {
     background-color: #0056b3;
   }
 
   @media (max-width: 758px) {
-    font-size: 1rem; /* Reduce button font size for mobile */
-    padding: 10px 20px; /* Adjust padding for smaller screens */
+    font-size: 1rem;
+    padding: 10px 20px; 
     margin-top: 350px;
     Margin-bottom: 10px;
   }
 `;
+const Subtext = styled.p`
+ font-size: 2em;
+  margin-top: 3px;
+  color: red;
+
+  @media (max-width: 768px) {
+    font-size: 1em;
+  }
+`;
+
 
 const AbcHero =() =>{
   return(
     <HeroContainer>
-      <HeroButton to="8weekschallenge">Join the challenge now </HeroButton>
+      <HeroButton to="8weekschallenge">Be the first to know about the next challenge </HeroButton>
+      {/* <Subtext>Next challenge starts on the 14th of october</Subtext> */}
     </HeroContainer>
   );
 };

@@ -62,7 +62,7 @@ const Button = styled.a`
   display: inline-block;
   padding: 8px 15px;
   font-size: 0.85em;
-  margin: 10px auto; /* Centers the button horizontally */
+  margin: 10px auto;
   text-decoration: none;
   background-color: #007bff;
   color: #fff;
@@ -103,7 +103,6 @@ const VideoContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   padding: 10px;
   box-sizing: border-box;
 
@@ -137,11 +136,11 @@ const Box = styled.div`
 `;
 
 const PersonalTraining = () => {
-  const [playingVideo, setPlayingVideo] = useState(null);
-
-  const handleVideoClick = (index) => {
-    setPlayingVideo(index);
-  };
+  const videoLinks = [
+    "https://www.youtube.com/embed/JtaXCa4ycV4",
+    "https://www.youtube.com/embed/BkEPYL8iY_Q",
+    "https://www.youtube.com/embed/zhkdIqgdQH0"
+  ];
 
   return (
     <Container>
@@ -149,7 +148,7 @@ const PersonalTraining = () => {
       <Paragraph>Achieve your fitness goals with our personal training programs.</Paragraph>
       
       <Section>
-        <Image src="https://via.placeholder.com/300" alt="Training" />
+        <Image src="/images/withkaren.png" alt="Training" />
         <TextSection>
           <Heading>Why Choose Ace Temple?</Heading>
           <Paragraph>
@@ -174,15 +173,17 @@ const PersonalTraining = () => {
       <Heading>What People Like You Say</Heading>
       <VideoSection>
         <VideoBox>
-          {[1, 2, 3].map((video, index) => (
-            <VideoContainer key={index} onClick={() => handleVideoClick(index)}>
-              {playingVideo === index ? (
-                <video width="100%" controls>
-                  <source src={`https://via.placeholder.com/300?text=Video+${index + 1}`} type="video/mp4" />
-                </video>
-              ) : (
-                <span>Testimonial {index + 1}</span>
-              )}
+          {videoLinks.map((link, index) => (
+            <VideoContainer key={index}>
+              <iframe 
+                width="100%" 
+                height="200" 
+                src={link} 
+                title={`Testimonial Video ${index + 1}`}
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen 
+              ></iframe>
             </VideoContainer>
           ))}
         </VideoBox>
