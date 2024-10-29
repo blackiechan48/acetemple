@@ -124,7 +124,7 @@ const ForeverMission = () => {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, []); // empty dependency array for no unnecessary re-renders
+  }, ); 
 
   return (
     <Container>
