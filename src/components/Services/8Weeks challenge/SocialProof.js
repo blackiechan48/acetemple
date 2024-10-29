@@ -1,13 +1,11 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-
 const testimonials = [
   "This program changed my life!",
-  "I cant believe I acheived this transformation in just 8 weeks!",
+  "I can't believe I achieved this transformation in just 8 weeks!",
   "Highly recommend this challenge to everyone!",
 ];
-
 
 const images = [
   '/images/result progress pics/aqib.png',
@@ -35,12 +33,12 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 1em;
+  font-size: 2em;
   color: #333;
   margin-bottom: 20px;
 
   @media (max-width: 768px) {
-    font-size: 1.5em; /* Adjust title size for mobile */
+    font-size: 1.5em;
   }
 `;
 
@@ -53,17 +51,17 @@ const ScrollingContainer = styled.div`
   height: 450px;
 
   @media (max-width: 768px) {
-    height: 280px; /* Adjust height for mobile */
+    height: 280px;
   }
 `;
 
 const ImageSlider = styled.div`
   display: flex;
-  width: 200%; /* Adjusted to accommodate duplicates */
-  animation: ${scrollRightToLeft} 30s linear infinite; /* Slower scroll speed */
+  width: 200%;
+  animation: ${scrollRightToLeft} 40s linear infinite;
 
   @media (max-width: 768px) {
-    animation: ${scrollRightToLeft} 25s linear infinite; /* Slower for mobile */
+    animation: ${scrollRightToLeft} 10s linear infinite;
   }
 `;
 
@@ -72,23 +70,24 @@ const TestimonialSlider = styled.div`
   justify-content: center;
   align-items: center;
   width: 200%;
-  animation: ${scrollLeftToRight} 30s linear infinite; /* Slower scroll speed */
+  animation: ${scrollLeftToRight} 40s linear infinite;
 
   @media (max-width: 768px) {
-    animation: ${scrollLeftToRight} 25s linear infinite; /* Slower for mobile */
+    animation: ${scrollLeftToRight} 10s linear infinite;
   }
 `;
 
 const Image = styled.img`
-  width: auto; /* Maintain aspect ratio */
-  height: 100%; /* Fill height */
-  max-width: 300px; /* Limit max width */
-  border-radius: 15px; /* Rounded edges */
+  width: auto;
+  height: 100%;
+  max-width: 300px;
+  border-radius: 15px;
   margin: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 768px) {
-    max-width: 150px; /* Smaller size for mobile */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 150px;
+    height: auto;
   }
 `;
 
@@ -96,10 +95,16 @@ const Testimonial = styled.div`
   padding: 20px;
   margin: 10px;
   font-size: 1.2em;
-  background-color: #f0f0f0;
+  background-color: #f9f9f9;
   border-radius: 10px;
   min-width: 300px;
   text-align: center;
+  color: #333;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   @media (max-width: 768px) {
     font-size: 1em;
@@ -112,16 +117,16 @@ const SocialProof = () => {
   return (
     <Container>
       <Title>Some Previous Transformations</Title>
-      <ScrollingContainer>
+      <ScrollingContainer aria-label="Image and testimonial scrolling showcase">
         {/* Images Slider */}
-        <ImageSlider>
+        <ImageSlider aria-label="Previous transformations">
           {[...images, ...images].map((imgSrc, index) => (
-            <Image key={index} src={imgSrc} alt={`Image ${index + 1}`} />
+            <Image key={index} src={imgSrc} alt={`Transformation ${index + 1}`} />
           ))}
         </ImageSlider>
 
         {/* Testimonials Slider */}
-        <TestimonialSlider>
+        <TestimonialSlider aria-label="Client testimonials">
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <Testimonial key={index}>
               {testimonial}

@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
@@ -32,9 +31,9 @@ const TestimonialSection = styled.div`
   max-width: 1200px;
   padding: 20px;
   margin-bottom: 40px;
-  background: #fff;
+  background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 `;
 
 const ImageContainer = styled.div`
@@ -42,6 +41,12 @@ const ImageContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-bottom: 20px;
+  gap: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Image = styled.img`
@@ -50,17 +55,29 @@ const Image = styled.img`
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    width: 80%;
+    margin-bottom: 10px;
+  }
 `;
 
 const TestimonialText = styled.div`
   width: 100%;
   text-align: center;
   font-size: 1.2rem;
+  font-weight: 500;
   line-height: 1.6;
-  margin: 0;
+  color: #333;
   padding: 20px;
-  background: yello;
+  background-color: #fdfd96;
   border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 15px;
+  }
 `;
 
 const Testimonials = () => {
@@ -87,7 +104,7 @@ const Testimonials = () => {
         "images/result progress pics/Sheila.JPG",
         "images/result progress pics/client2.JPG",
       ],
-      text: "Very professional and dedicated to my weight journey . Olu would always check up on my eating plan . Would defo train again with him and recommend to others"
+      text: "Very professional and dedicated to my weight journey. Olu would always check up on my eating plan. Would defo train again with him and recommend to others."
     },
     {
       images: [
@@ -97,7 +114,6 @@ const Testimonials = () => {
       ],
       text: "I worked with Ace temple over the past year and cannot stress enough how important that year was in achieving my fitness goals. He really helped me supercharge my results, losing around 20Kg, achieving fitness levels that I wouldn't have achieved on my own. Would recommend anyone considering hiring a PT to give him a shot. You'll be surprised."
     }
-    // Add more testimonials as needed
   ];
 
   return (
@@ -108,7 +124,7 @@ const Testimonials = () => {
           <TestimonialSection key={index}>
             <ImageContainer>
               {testimonial.images.map((src, idx) => (
-                <Image key={idx} src={src} alt={`Image ${idx + 1}`} />
+                <Image key={idx} src={src} alt={`Transformation ${idx + 1}`} />
               ))}
             </ImageContainer>
             <TestimonialText>{testimonial.text}</TestimonialText>

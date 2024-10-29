@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const ServiceContainer = styled.div`
   display: flex;
@@ -95,7 +96,8 @@ const Services = () => {
         <VideoEmbed 
           src="https://www.youtube.com/embed/your-video-id" 
           frameBorder="0" 
-          allowFullScreen 
+          allowFullScreen
+          title="Service Introduction Video"
         />
       </VideoBox>
       <ServiceContainer>
@@ -105,18 +107,18 @@ const Services = () => {
             Get personalized training programs tailored to your goals. 
             Have your sessions meticulously planned by a results-driven personal trainer, ensuring every aspect of your training journey is optimized to fit your lifestyle.
           </Description>
-          <a href="/personalTraining">
+          <Link to="/personalTraining">
             <LearnMoreButton>Learn More</LearnMoreButton>
-          </a>
+          </Link>
         </ServiceOption>
         <ServiceOption>
           <Title>Online Coaching</Title>
           <Description>
             Access coaching sessions from the comfort of your home. Achieve incredible results from anywhere in the world with a results-driven approach.
           </Description>
-          <a href="/OnlineCoaching">
+          <Link to="/OnlineCoaching">
             <LearnMoreButton>Learn More</LearnMoreButton>
-          </a>
+          </Link>
         </ServiceOption>
       </ServiceContainer>
     </>

@@ -15,7 +15,7 @@ const appear = keyframes`
 
 // Header section
 const HeaderSection = styled.section`
-  background-image: url('images/olu1.jpg'); /* Ensure path is correct */
+  background-image: url('images/ballslam.png'); /* Ensure path is correct */
   background-size: cover;
   background-position: center;
   height: 600px;

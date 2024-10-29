@@ -1,13 +1,25 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+// Styled component for the header container
 const HeaderContainer = styled.header`
   position: relative;
-  text-align: center;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
   padding: 20px;
   background-color: #f8f9fa;
 `;
 
+// Styled component for the logo
+const Logo = styled.img`
+  height: 40px; /* Adjust height as needed */
+  margin-right: auto; /* Pushes the burger icon to the right */
+  @media (max-width: 768px) {
+    height: 30px; /* Smaller height for mobile */
+  }
+`;
+
+// Styled component for navigation
 const Nav = styled.nav`
   display: flex;
   justify-content: center;
@@ -28,6 +40,7 @@ const Nav = styled.nav`
   }
 `;
 
+// Styled component for navigation links
 const NavLink = styled.a`
   text-decoration: none;
   font-size: 1rem;
@@ -41,15 +54,14 @@ const NavLink = styled.a`
   }
 `;
 
+// Styled component for the burger icon
 const BurgerIcon = styled.div`
   display: none;
   cursor: pointer;
 
   @media (max-width: 768px) {
     display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    margin-left: auto; /* Aligns burger icon to the right */
   }
 
   div {
@@ -61,6 +73,7 @@ const BurgerIcon = styled.div`
   }
 `;
 
+// Header component
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -70,6 +83,7 @@ const Header = () => {
 
   return (
     <HeaderContainer>
+      <Logo src="LOGO FULL_.png" alt="Logo" /> {/* Add your logo path here */}
       <BurgerIcon onClick={toggleMenu}>
         <div />
         <div />
@@ -80,7 +94,6 @@ const Header = () => {
         <NavLink href="/AboutPage">About</NavLink>
         <NavLink href="/testimonials">Testimonials</NavLink>
         <NavLink href="/services">Services</NavLink>
-        
       </Nav>
     </HeaderContainer>
   );

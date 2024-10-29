@@ -1,4 +1,4 @@
-// import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -13,6 +13,16 @@ const Heading = styled.h1`
 
   @media (min-width: 600px) {
     font-size: 1.5em;
+  }
+`;
+
+const SubHeading = styled.h2`
+  font-size: 1.2em;
+  text-align: center;
+  margin: 10px 0;
+
+  @media (min-width: 600px) {
+    font-size: 1.4em;
   }
 `;
 
@@ -69,6 +79,7 @@ const Button = styled.a`
   border: none;
   cursor: pointer;
   text-align: center;
+  border-radius: 4px;
 
   &:hover {
     background-color: #0056b3;
@@ -81,7 +92,10 @@ const Button = styled.a`
 `;
 
 const VideoSection = styled.div`
-  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 `;
 
 const VideoBox = styled.div`
@@ -109,6 +123,15 @@ const VideoContainer = styled.div`
   @media (min-width: 600px) {
     width: 30%;
   }
+
+  iframe {
+    width: 100%;
+    height: 200px;
+
+    @media (min-width: 600px) {
+      height: 240px;
+    }
+  }
 `;
 
 const BoxContainer = styled.div`
@@ -129,6 +152,7 @@ const Box = styled.div`
   padding: 15px;
   background-color: #f0f0f0;
   text-align: center;
+  border-radius: 8px;
 
   @media (min-width: 600px) {
     width: 30%;
@@ -150,7 +174,7 @@ const PersonalTraining = () => {
       <Section>
         <Image src="/images/withkaren.png" alt="Training" />
         <TextSection>
-          <Heading>Why Choose Ace Temple?</Heading>
+          <SubHeading>Why Choose Ace Temple?</SubHeading>
           <Paragraph>
             At the core, every exercise prescribed is tailored to your unique anatomy. 
             We believe personal training transcends mere one-on-one sessions; 
@@ -170,14 +194,12 @@ const PersonalTraining = () => {
         </TextSection>
       </Section>
 
-      <Heading>What People Like You Say</Heading>
+      <SubHeading>What People Like You Say</SubHeading>
       <VideoSection>
         <VideoBox>
           {videoLinks.map((link, index) => (
             <VideoContainer key={index}>
               <iframe 
-                width="100%" 
-                height="200" 
                 src={link} 
                 title={`Testimonial Video ${index + 1}`}
                 frameBorder="0" 
@@ -187,19 +209,19 @@ const PersonalTraining = () => {
             </VideoContainer>
           ))}
         </VideoBox>
-        <Button href="#">Watch More</Button>
+        <Button href="#" style={{ marginTop: '10px' }}>Watch More</Button>
       </VideoSection>
 
-      <Heading>Our Services</Heading>
+      <SubHeading>Our Services</SubHeading>
       <BoxContainer>
         <Box>
-          <Heading>Consultation</Heading>
+          <SubHeading>Consultation</SubHeading>
         </Box>
         <Box>
-          <Heading>Result Focused Training</Heading>
+          <SubHeading>Result Focused Training</SubHeading>
         </Box>
         <Box>
-          <Heading>Personalized Meal Plan</Heading>
+          <SubHeading>Personalized Meal Plan</SubHeading>
         </Box>
       </BoxContainer>
     </Container>

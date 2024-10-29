@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Container with responsive flex layout
 const FeatureBoxesContainer = styled.div`
   background-color: black;
   display: flex;
@@ -14,7 +15,8 @@ const FeatureBoxesContainer = styled.div`
   }
 `;
 
-const FeatureBox = styled.div`
+// Responsive feature box styling with animations
+const FeatureBox = styled.section`
   height: auto;
   background-color: #f0f0f0;
   padding: 1rem;
@@ -35,6 +37,8 @@ const FeatureBox = styled.div`
     height: 300px;
     border-radius: 8px;
     margin-bottom: 1rem;
+    object-fit: cover;
+    loading: lazy;  // Lazy load for performance
 
     @media (max-width: 768px) {
       width: 200px;
@@ -46,20 +50,19 @@ const FeatureBox = styled.div`
     text-decoration: none;
     color: #000;
     margin-top: auto;
-  }
+    width: 100%; // Make the entire button area clickable
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 0; // Adjust padding for mobile
 
-  button {
     background-color: black;
     color: yellow;
-    border: none;
-    padding: 0.5rem 2rem;
     border-radius: 4px;
-    cursor: pointer;
     transition: background-color 0.3s;
-  }
 
-  button:hover {
-    background-color: #0056b3;
+    &:hover {
+      background-color: #0056b3;
+    }
   }
 
   @media (max-width: 768px) {
@@ -68,6 +71,7 @@ const FeatureBox = styled.div`
   }
 `;
 
+// Heading styles with responsive font adjustments
 const Heading = styled.h2`
   text-align: center;
   margin-bottom: 2rem;
@@ -79,6 +83,7 @@ const Heading = styled.h2`
   }
 `;
 
+// Subheading with responsive adjustments for mobile readability
 const SubHeading = styled.p`
   text-align: center;
   font-size: 1.1rem;
@@ -87,6 +92,7 @@ const SubHeading = styled.p`
 
   @media (max-width: 768px) {
     font-size: 1rem;
+    padding: 0 1rem; // Extra padding for better readability on mobile
   }
 `;
 
@@ -98,31 +104,25 @@ const FeatureBoxes = () => {
       <SubHeading>Whether you're aiming for a body transformation or just improved health, I know how to make it happen.</SubHeading>
       <FeatureBoxesContainer>
         <FeatureBox>
-        <img src="/images/MonPt.png" alt="Online Coaching" />
-          <h3>Personal training</h3>
-          <p>Personal training based in birmingham.</p>
-          <p>Workouts will be guided and supervised in private sessions</p>
-          <a href="/personaltraining">
-            <button>Find Out More</button>
-          </a>
+          <img src="/images/MonPt.png" alt="Personal Training" />
+          <h3>Personal Training</h3>
+          <p>Personal training based in Birmingham.</p>
+          <p>Workouts will be guided and supervised in private sessions.</p>
+          <a href="/personaltraining">Find Out More</a>
         </FeatureBox>
         <FeatureBox>
           <img src="images/onlinept.jpg" alt="Online Coaching" />
           <h3>Online Coaching</h3>
           <p>Access coaching sessions from the comfort of your home.</p>
           <p>Achieve incredible results from anywhere with a personalized plan and accountability.</p>
-          <a href="/OnlineCoaching">
-            <button>Find Out More</button>
-          </a>
+          <a href="/OnlineCoaching">Find Out More</a>
         </FeatureBox>
         <FeatureBox>
           <img src="/images/acebody.png" alt="Challenges" />
           <h3>Challenges</h3>
           <p>Join our fitness challenges and push your limits.</p>
           <p>Work alongside like-minded individuals in a supportive community to reach your fitness goals.</p>
-          <a href="/8weekschallenge">
-            <button>Find Out More</button>
-          </a>
+          <a href="/8weekschallenge">Find Out More</a>
         </FeatureBox>
       </FeatureBoxesContainer>
     </>
