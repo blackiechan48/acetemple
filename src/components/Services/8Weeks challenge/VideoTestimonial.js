@@ -39,7 +39,7 @@ const VideoContainer = styled.div`
   margin-bottom: 10px;
 
   iframe {
-    width: 100%;
+    width: 95%;
     height: 100%;
     border-radius: 8px;
   }
@@ -53,7 +53,7 @@ const StripeButtonWrapper = styled.div`
   padding: 0 20px;
 
   stripe-buy-button {
-    width: 100%;
+    width: 90%;
     max-width: 300px;
   }
 

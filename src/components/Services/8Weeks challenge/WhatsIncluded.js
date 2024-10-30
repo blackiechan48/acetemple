@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const SectionContainer = styled.div`
   position: relative;
-  width: 100vw;
+  width: 90%;
   height: 110vh;
   background-color: black;
   display: flex;
