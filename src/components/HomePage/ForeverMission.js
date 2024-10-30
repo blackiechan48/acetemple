@@ -63,7 +63,7 @@ const Thumbnail = styled.img.attrs({ loading: 'lazy' })`
   flex-shrink: 0; // Prevents shrinking when scrolling horizontally
 
   @media (max-width: 600px) {
-    width: 80%;
+    width: 100%;
     height: auto;
   }
 `;
