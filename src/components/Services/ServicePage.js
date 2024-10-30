@@ -21,6 +21,7 @@ const VideoBox = styled.div`
   text-align: center;
 
   @media (max-width: 600px) {
+  width: 95%;
     padding: 10px;
   }
 `;
@@ -37,14 +38,14 @@ const VideoEmbed = styled.iframe`
 const ServiceOption = styled.div`
   background-color: #f9f9f9;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: px;
   padding: 20px;
   width: 45%;
   text-align: center;
   margin-bottom: 20px;
 
   @media (max-width: 600px) {
-    width: 95%;
+    width: 90%;
     padding: 15px;
   }
 `;
