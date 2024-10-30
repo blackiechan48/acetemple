@@ -8,7 +8,7 @@ const ServiceContainer = styled.div`
   padding: 20px;
   flex-wrap: wrap;
 
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     flex-direction: column;
     padding: 10px;
   }
@@ -20,7 +20,7 @@ const VideoBox = styled.div`
   margin-bottom: 20px;
   text-align: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     padding: 10px;
   }
 `;
@@ -29,7 +29,7 @@ const VideoEmbed = styled.iframe`
   width: 100%;
   height: 400px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     height: 250px;
   }
 `;
@@ -43,8 +43,8 @@ const ServiceOption = styled.div`
   text-align: center;
   margin-bottom: 20px;
 
-  @media (max-width: 768px) {
-    width: 100%;
+  @media (max-width: 600px) {
+    width: 95%;
     padding: 15px;
   }
 `;
