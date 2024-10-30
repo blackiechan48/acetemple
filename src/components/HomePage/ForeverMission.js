@@ -15,7 +15,7 @@ const Container = styled.div`
 
 // Responsive text section with font adjustments for readability on smaller screens
 const TextSection = styled.div`
-  width: 30%;
+  width: 23%;
   padding: 20px;
   background-color: yellow;
 
@@ -24,7 +24,7 @@ const TextSection = styled.div`
   }
 
   @media (max-width: 600px) {
-    width: 100%;
+    width: 90%;
     padding: 15px;
 
     h1 { font-size: 1.5rem; }
@@ -43,7 +43,7 @@ const ImageSection = styled.div`
   align-items: center;
 
   @media (max-width: 600px) {
-    width: 100%;
+    width: 90%;
     height: auto;
     padding: 15px;
   }
@@ -63,7 +63,7 @@ const Thumbnail = styled.img.attrs({ loading: 'lazy' })`
   flex-shrink: 0; // Prevents shrinking when scrolling horizontally
 
   @media (max-width: 600px) {
-    width: 100%;
+    width: 80%;
     height: auto;
   }
 `;
@@ -101,7 +101,7 @@ const Button = styled.a`
   @media (max-width: 768px) {
     font-size: 14px;
     padding: 8px 16px;
-    width: 100%; // Full width on mobile for easy tapping
+    width: 80%; // Full width on mobile for easy tapping
   }
 `;
 

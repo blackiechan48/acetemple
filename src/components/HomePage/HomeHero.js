@@ -8,7 +8,7 @@ const HeroContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 105vh;
+  height: 185vh;
   background: url(images/olu1.jpg) no-repeat center center;
   background-size: cover;
   text-align: center;
@@ -33,7 +33,7 @@ const HeroButton = styled(Link)`
   margin-top: 510px;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #F4CE14;
   }
 
   @media (max-width: 758px) {
