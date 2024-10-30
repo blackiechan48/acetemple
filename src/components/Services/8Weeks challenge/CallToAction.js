@@ -28,7 +28,7 @@ const Container = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 30vh;
   padding: 20px;
 `;
 
@@ -59,6 +59,7 @@ font-size: 0.5em;
 
 const StripeButtonWrapper = styled.div`
   margin-top: 20px;
+  
 `;
 
 // Staggered Image Scroll on the right
@@ -74,7 +75,7 @@ const RightBox = styled.div`
 const ImageScroller = styled.div`
   display: flex;
   flex-direction: column;
-  animation: ${staggerAnimation} 30s linear infinite;
+  animation: ${staggerAnimation} 10s linear infinite;
 `;
 
 const Image = styled.img`
