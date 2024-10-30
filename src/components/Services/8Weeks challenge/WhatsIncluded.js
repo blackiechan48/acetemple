@@ -29,10 +29,11 @@ const TextBox = styled.div`
   margin: 10px;
 
   @media (max-width: 768px) {
-    width: 90%;
+    width: 80%;
     position: static;
     margin-bottom: 20px;
     padding: 15px;
+    margin-left:0.1px;
   }
 `;
 
