@@ -44,7 +44,7 @@ const Title = styled.h2`
   margin-bottom: 20px;
   color: #333;
 
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     font-size: 1em;
   }
 `;
@@ -52,7 +52,7 @@ const Subtext =styled.h4`
 font-size: 1em;
 color: red;
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 font-size: 0.5em;
 }`;
 
@@ -88,8 +88,8 @@ const Image = styled.img`
     margin-right: 20px;
   }
 
-  @media (max-width: 768px) {
-    width: 100%;
+  @media (max-width: 600px) {
+    width: 90%;
   }
 `;
 

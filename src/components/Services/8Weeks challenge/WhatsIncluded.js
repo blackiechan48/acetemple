@@ -5,16 +5,17 @@ const SectionContainer = styled.div`
   position: relative;
   width: 100vw;
   height: 110vh;
-  background: url(/RPReplay_Final1726921791.MP4) no-repeat center center;
-  background-size: center;
-  background-color:black;
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
 
-  @media (max-width: 768px) {
-    flex-direction: column; 
+  @media (max-width: 600px) {
+    flex-direction: column;
     justify-content: flex-start;
+    height: auto;
   }
 `;
 
@@ -24,10 +25,12 @@ const TextBox = styled.div`
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   width: 300px;
+  box-sizing: border-box;
+  margin: 10px;
 
   @media (max-width: 768px) {
-    width: 90%; 
-    position: relative;
+    width: 90%;
+    position: static;
     margin-bottom: 20px;
     padding: 15px;
   }
@@ -45,21 +48,21 @@ const Title = styled.h2`
 const Subtext = styled.ul`
   font-size: 1rem;
   line-height: 1.1;
-  padding-left: 0; 
+  padding-left: 0;
 
   li {
     margin-bottom: 8px;
-    list-style: none; 
+    list-style: none;
     position: relative;
-    padding-left: 1.5em; 
+    padding-left: 1.5em;
 
     &::before {
-      content: '★';  
+      content: '★';
       position: absolute;
       left: 0;
       top: 0;
-      color: #FFD700;  
-      font-size: 1.2em;  
+      color: #FFD700;
+      font-size: 1.2em;
     }
   }
 
@@ -68,7 +71,6 @@ const Subtext = styled.ul`
   }
 `;
 
-// Positions for the text boxes
 const TopLeft = styled(TextBox)`
   top: 10%;
   left: 10%;
@@ -112,7 +114,6 @@ const BottomRight = styled(TextBox)`
 const PersonalisedSection = () => {
   return (
     <SectionContainer>
-      {/* Top Left: Personalised Targets */}
       <TopLeft>
         <Title>Personalised Targets</Title>
         <Subtext>
@@ -121,16 +122,14 @@ const PersonalisedSection = () => {
         </Subtext>
       </TopLeft>
 
-      {/* Bottom Left: Tailored Workout and Diet Plan */}
       <BottomLeft>
-        <Title>Tailored Workout and Diet Plan to Fit Your Lifestyle</Title>
+        <Title>Tailored Workout and Diet Plan</Title>
         <Subtext>
           <li>No more wondering what to do at the gym.</li>
           <li>Have your meal plans fit into your lifestyle and routine.</li>
         </Subtext>
       </BottomLeft>
 
-      {/* Top Right: Delicious Low-Calorie Meals */}
       <TopRight>
         <Title>Delicious Low-Calorie Meals</Title>
         <Subtext>
@@ -139,7 +138,6 @@ const PersonalisedSection = () => {
         </Subtext>
       </TopRight>
 
-      {/* Bottom Right: Track Your Goals Easily */}
       <BottomRight>
         <Title>Track Your Goals Easily</Title>
         <Subtext>

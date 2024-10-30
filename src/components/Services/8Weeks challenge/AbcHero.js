@@ -37,7 +37,7 @@ const HeroButton = styled(Link)`
     background-color: #0056b3;
   }
 
-  @media (max-width: 758px) {
+  @media (max-width: 600px) {
     font-size: 1rem;
     padding: 10px 20px; 
     margin-top: 350px;

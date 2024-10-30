@@ -24,24 +24,43 @@ const Section = styled.div`
   align-items: center;
   justify-content: center;
   width: 100vw;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const VideoContainer = styled.div`
   width: 100%;
-  max-width: 800px;
+  max-width: 100%;
   aspect-ratio: 16/9;
   margin-bottom: 10px;
 
   iframe {
     width: 100%;
     height: 100%;
+    border-radius: 8px;
   }
 `;
 
 const StripeButtonWrapper = styled.div`
-  margin-top: 2px;
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+
+  stripe-buy-button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 2px;
+    padding: 0;
+  }
 `;
 
 const VideoWithStripeButton = () => {
@@ -52,7 +71,7 @@ const VideoWithStripeButton = () => {
 
   return (
     <Section>
-      {/* Paida testiomonial Video */}
+      {/* Paida Testimonial Video */}
       <VideoContainer>
         <iframe
           src="https://www.youtube.com/embed/1ew-winZcks"
