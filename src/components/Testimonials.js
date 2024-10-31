@@ -12,6 +12,13 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const HeaderImage = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 300px; /* Adjust as needed */
+`;
+
 const FullScreenContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -119,6 +126,9 @@ const Testimonials = () => {
   return (
     <>
       <GlobalStyle />
+      {/* Header Image */}
+      <HeaderImage src="/images/collage.png" alt="Header Image" />
+      
       <FullScreenContainer>
         {testimonialsData.map((testimonial, index) => (
           <TestimonialSection key={index}>
