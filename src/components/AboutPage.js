@@ -135,7 +135,7 @@ const AboutPage = () => {
           <h1>Who Am I?</h1>
           <p>Hi, I’m Olu Olayeni, a personal trainer based in Birmingham, England, and proud dad. 
             Since graduating from university in 2015, I’ve dedicated myself to helping people achieve their fitness goals. Over the years, 
-            I've worked in several commercial gyms across Birmingham, connecting with clients from all backgrounds and fitness levels. <br></br> <br></br>
+            I've worked in several commercial gyms across Birmingham, working with clients from all backgrounds and fitness levels. <br></br> <br></br>
             Fitness has always been a big part of my life, even though I’ve had my fair share of ups and downs along the way. 
             I've pushed myself to peak shape for competitions, sports performance, and (let's be honest) sometimes just to turn heads—until I met my wife!
              Now, my focus is on staying fit as a ‘trophy husband’ and keeping up with my very energetic son.</p>
@@ -160,7 +160,12 @@ const AboutPage = () => {
           achieve and maintain their fitness transformations. My work focuses not just on 
           achieving results, but on making sure my clients have the tools to keep them.
           <br></br> <br></br>
-          In 2019, I expanded into online coaching, initially as a way to continue supporting clients after completing our one-on-one sessions or for those who had to relocate but still wanted my guidance. This online approach quickly grew, as people outside Birmingham began reaching out for support based on the success and recommendations of my clients. Today, my online coaching program is thriving, driven by real results and word-of-mouth..
+          In 2019, I expanded into online coaching, initially as a way to continue supporting 
+          clients after completing our one-on-one sessions or for those who had to relocate 
+          but still wanted my guidance. This online approach quickly grew, as people outside 
+          Birmingham began reaching out for support based on the success and recommendations 
+          of my clients. Today, my online coaching program is growing, driven by real results
+           and word-of-mouth.
           </p>
         </TextBox>
         <Image src="/images/withmon.png" alt="Your Image" />

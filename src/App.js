@@ -11,6 +11,7 @@ import OnlineCoaching from './components/Services/OnlineCoaching';
 import TransformationChallenge from './components/Services/8Weeks challenge/TransformationChallenge';
 import AdventCalendarPage from './components/AdventCalendarPage';
 import ScrollToTopArrow from './components/HomePage/ScrollToTopArrow';
+import ConsultationForm from './components/Forms/ConsultationForm';
 
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/AboutPage" element={<AboutPage />} />
           <Route path="/OnlineCoaching" element={<OnlineCoaching />} />
           <Route path ="/advent-calendar" element={<AdventCalendarPage/>}/>
+          <Route path ="/consultation-form" element={<ConsultationForm/>}/>
           {/* Add more routes as needed */}
         </Routes>
         <ScrollToTopArrow />

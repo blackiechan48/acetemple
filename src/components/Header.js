@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 // Styled component for the header container
 const HeaderContainer = styled.header`
   position: relative;
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center items vertically */
+  display: flex; 
+  align-items: center;
   padding: 20px;
   background-color: #f8f9fa;
 `;
@@ -68,7 +68,7 @@ const BurgerIcon = styled.div`
   div {
     width: 25px;
     height: 3px;
-    background-color: yellow
+    background-color: #222831
     ;
     margin: 5px 0;
     transition: all 0.3s ease;
