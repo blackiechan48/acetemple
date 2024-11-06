@@ -256,7 +256,7 @@ const FAQList = () => {
       <FAQTitle>Frequently Asked Questions</FAQTitle>
       <FAQSubtitle>Get answers to your most pressing questions</FAQSubtitle>
       {faqs.map((faq, index) => (
-        <FAQItem key={index} onClick={() => toggleFAQ(index)}>
+        <FAQItem key={index} onClick={() => toggleFAQ(index)}> 
           <Question>{faq.question}</Question>
           <Answer isOpen={openFAQ === index}>{faq.answer}</Answer>
         </FAQItem>
