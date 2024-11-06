@@ -1,6 +1,6 @@
 // src/components/ForeverMission.js
 import React, { useState, useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
+// import styled, { keyframes } from 'styled-components';
 
 // Responsive container with flex adjustments for mobile
 const Container = styled.div`
