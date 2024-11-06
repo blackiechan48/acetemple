@@ -123,7 +123,7 @@ const AboutPage = () => {
       <Section>
         <Image src="/images/smile.png" alt="image of Olu with his hands in his pocket smiling " />
         <TextBox>
-          <h1>I'm Olumide Olayeni</h1>
+          <h1>I'm Olu Olayeni</h1>
           <h3>Personal Trainer and Fitness Coach</h3>
           <h3>I LEAD BY EXAMPLE</h3>
         </TextBox>
