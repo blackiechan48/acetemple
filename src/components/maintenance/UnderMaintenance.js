@@ -116,43 +116,8 @@ const SocialIcon = styled.a`
   }
 `;
 
-const EmailForm = styled.form`
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  max-width: 90%;
-`;
 
-const EmailInput = styled.input`
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  width: 100%;
-  max-width: 280px;
 
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-  }
-`;
-
-const SubmitButton = styled.button`
-  background-color: #f4ce14;
-  color: #fff;
-  border: none;
-  padding: 8px 15px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-
-  &:hover {
-    background-color: #f05454;
-  }
-`;
 
 const UnderMaintenance = () => {
   const calculateTimeLeft = () => {
@@ -195,30 +160,7 @@ const UnderMaintenance = () => {
     { label: 'Seconds', value: timeLeft.seconds },
   ];
 
-  const handleEmailSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
 
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, firstName }),
-      });
-
-      if (response.ok) {
-        setMessage('Thank you for subscribing!');
-        setEmail('');
-        setFirstName('');
-      } else {
-        setMessage('There was an issue with your subscription. Please try again.');
-      }
-    } catch (error) {
-      setMessage('Failed to connect. Please try again later.');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <Container>
@@ -236,24 +178,7 @@ const UnderMaintenance = () => {
         ))}
       </CountdownContainer>
 
-      <EmailForm onSubmit={handleEmailSubmit}>
-        <EmailInput
-          type="text"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          placeholder="Enter your first name"
-          required
-        />
-        <EmailInput
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-          required
-        />
-        <SubmitButton type="submit">{loading ? 'Subscribing...' : 'Subscribe'}</SubmitButton>
-        {message && <p>{message}</p>}
-      </EmailForm>
+     
 
       <SocialMediaContainer>
         <SocialIcon href="https://www.facebook.com/Acetemplehealth" target="_blank" aria-label="Facebook">
