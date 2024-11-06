@@ -1,5 +1,5 @@
 // src/components/UnderMaintenance.js
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons';
@@ -139,11 +139,7 @@ const UnderMaintenance = () => {
     return timeLeft;
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-  const [email, setEmail] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [message, setMessage] = useState('');
-  const [loading, setLoading] = useState(false);
+  ;
 
   useEffect(() => {
     const timer = setInterval(() => {
