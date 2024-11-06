@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
+import { Link } from 'react-router-dom';
 // Styled component for the header container
 const HeaderContainer = styled.header`
   position: relative;
@@ -12,10 +12,11 @@ const HeaderContainer = styled.header`
 
 // Styled component for the logo
 const Logo = styled.img`
-  height: 40px; /* Adjust height as needed */
-  margin-right: auto; /* Pushes the burger icon to the right */
+  height: 40px; 
+  margin-right: auto; 
+  cursor:pointer;
   @media (max-width: 768px) {
-    height: 30px; /* Smaller height for mobile */
+    height: 30px; 
   }
 `;
 
@@ -44,13 +45,13 @@ const Nav = styled.nav`
 const NavLink = styled.a`
   text-decoration: none;
   font-size: 1rem;
-  color: #007bff;
+  color: #222831;
   padding: 10px 15px;
   border-radius: 4px;
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #e9ecef;
+    background-color: yellow;
   }
 `;
 
@@ -61,13 +62,14 @@ const BurgerIcon = styled.div`
 
   @media (max-width: 768px) {
     display: block;
-    margin-left: auto; /* Aligns burger icon to the right */
+    margin-left: auto; 
   }
 
   div {
     width: 25px;
     height: 3px;
-    background-color: #333;
+    background-color: yellow
+    ;
     margin: 5px 0;
     transition: all 0.3s ease;
   }
@@ -83,7 +85,10 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <Logo src="LOGO FULL_.png" alt="Logo" /> {/* Add your logo path here */}
+      
+    <Link to="/">
+      <Logo src="LOGO FULL_.png" alt="Logo" /> {}
+      </Link>
       <BurgerIcon onClick={toggleMenu}>
         <div />
         <div />
