@@ -140,10 +140,7 @@ const UnderMaintenance = () => {
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-  const [email, setEmail] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [message, setMessage] = useState('');
-  const [loading, setLoading] = useState(false);
+ 
 
   useEffect(() => {
     const timer = setInterval(() => {
