@@ -1,5 +1,5 @@
 // src/components/UnderMaintenance.js
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons';
@@ -116,30 +116,28 @@ const SocialIcon = styled.a`
   }
 `;
 
+// Function to calculate time left
+const calculateTimeLeft = () => {
+  const targetDate = new Date('November 18, 2024 00:00:00').getTime();
+  const now = new Date().getTime();
+  const difference = targetDate - now;
 
+  let timeLeft = {};
 
+  if (difference > 0) {
+    timeLeft = {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / (1000 / 60) % 60)),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  }
+
+  return timeLeft;
+};
 
 const UnderMaintenance = () => {
-  const calculateTimeLeft = () => {
-    const targetDate = new Date('November 18, 2024 00:00:00').getTime();
-    const now = new Date().getTime();
-    const difference = targetDate - now;
-
-    let timeLeft = {};
-
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-      };
-    }
-
-    return timeLeft;
-  };
-
-  ;
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -156,8 +154,6 @@ const UnderMaintenance = () => {
     { label: 'Seconds', value: timeLeft.seconds },
   ];
 
-
-
   return (
     <Container>
       <Title>Get on Santa's Nice List 🎅✨</Title>
@@ -173,8 +169,6 @@ const UnderMaintenance = () => {
           </CountdownBox>
         ))}
       </CountdownContainer>
-
-     
 
       <SocialMediaContainer>
         <SocialIcon href="https://www.facebook.com/Acetemplehealth" target="_blank" aria-label="Facebook">
