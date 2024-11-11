@@ -357,7 +357,8 @@ const AdventCalendarPage = () => {
   const [openDoors, setOpenDoors] = useState({});
   const [selectedDay, setSelectedDay] = useState(null);
   const currentDate = new Date().getDate();
-  const testingMode = new Date().getMonth() === 10; // November
+  const testingMode = new Date().getMonth() === 12
+; // November
 
   const handleDoorClick = (day) => {
     if (testingMode || day <= currentDate) {

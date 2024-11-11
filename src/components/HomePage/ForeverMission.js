@@ -78,23 +78,7 @@ const Thumbnail = styled.img.attrs({ loading: 'lazy' })`
   }
 `;
 
-// Call-to-action section adjusted for mobile layout
-const CallToAction = styled.div`
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  color: white;
 
-  @media (max-width: 768px) {
-    position: static;
-    margin-top: 10px;
-  }
-
-`;
 
 const ForeverMission = () => {
   const images = [
