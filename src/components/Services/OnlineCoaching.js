@@ -1,7 +1,6 @@
 // src/components/OnlineCoaching.js
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
 
 // Appear animation for scroll effect
 const appear = keyframes`
@@ -15,9 +14,9 @@ const appear = keyframes`
   }
 `;
 
-// Header section
+// Header section styling
 const HeaderSection = styled.section`
-  background-image: url('images/ballslam.png'); /* Ensure path is correct */
+  background-image: url('images/ballslam.png');
   background-size: cover;
   background-position: center;
   height: 600px;
@@ -33,7 +32,7 @@ const HeaderSection = styled.section`
   }
 `;
 
-// Main content section with black background
+// Main content section styling
 const MainSection = styled.section`
   background-color: black;
   color: white;
@@ -42,6 +41,29 @@ const MainSection = styled.section`
 
   @media (max-width: 600px) {
     padding: 30px 15px;
+  }
+`;
+
+// Reusable Button styled component for linking to Calendly
+const StyledLinkButton = styled.a`
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: darkred;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.8rem;
+    padding: 8px 16px;
   }
 `;
 
@@ -87,30 +109,7 @@ const TextBox = styled.p`
   }
 `;
 
-// Styled Link button for "Get Started" to navigate to the consultation form
-const StyledLinkButton = styled(Link)`
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
-  display: inline-block;
-  margin-top: 10px;
-
-  &:hover {
-    background-color: darkred;
-  }
-
-  @media (max-width: 600px) {
-    font-size: 0.8rem;
-    padding: 8px 16px;
-  }
-`;
-
-// Points Section
+// Points section styling
 const PointsSection = styled.section`
   padding: 50px 20px;
   display: grid;
@@ -161,7 +160,6 @@ const PointText = styled.p`
   }
 `;
 
-// Centered Image Section
 const CenterImageSection = styled.section`
   display: flex;
   justify-content: center;
@@ -179,7 +177,6 @@ const CenterImage = styled.img.attrs({ loading: 'lazy' })`
   border-radius: 1px;
 `;
 
-// FAQ Section
 const FAQSection = styled.section`
   padding: 1px 20px;
   background-color: #f9f9f9;
@@ -265,7 +262,6 @@ const FAQList = () => {
   );
 };
 
-// Text Section with button
 const TextSection = styled.section`
   padding: 50px 20px;
   text-align: center;
@@ -308,26 +304,6 @@ const FinalTextBox = styled.p`
   }
 `;
 
-const EndButton = styled(Link)`
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-
-  &:hover {
-    background-color: darkred;
-  }
-
-  @media (max-width: 600px) {
-    font-size: 0.8rem;
-    padding: 8px 16px;
-  }
-`;
-
 // Main Component
 const OnlineCoaching = () => {
   const points = [
@@ -350,7 +326,9 @@ const OnlineCoaching = () => {
         <TextBox>
           Do you want to <strong>drop belly fat</strong>, enhance your strength, and <strong>tone up</strong> to be in the best <strong>physical and mental</strong> shape of your life?
         </TextBox>
-        <StyledLinkButton to="/consultation-form">Get Started</StyledLinkButton>
+        <StyledLinkButton href="https://calendly.com/acetemple/consultation?month=2024-07" target="_blank" rel="noopener noreferrer">
+          Get Started
+        </StyledLinkButton>
       </MainSection>
       <PointsSection>
         {points.map((point, index) => (
@@ -368,7 +346,9 @@ const OnlineCoaching = () => {
       <TextSection>
         <SectionTitle>Ready to Begin?</SectionTitle>
         <FinalTextBox>Sign up today and take the first step towards a healthier you!</FinalTextBox>
-        <EndButton to="/consultation-form">Get Started</EndButton>
+        <StyledLinkButton href="https://calendly.com/acetemple/consultation?month=2024-07" target="_blank" rel="noopener noreferrer">
+          Get Started
+        </StyledLinkButton>
       </TextSection>
     </div>
   );
