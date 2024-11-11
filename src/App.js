@@ -12,6 +12,8 @@ import TransformationChallenge from './components/Services/8Weeks challenge/Tran
 import AdventCalendarPage from './components/AdventCalendarPage';
 import ScrollToTopArrow from './components/HomePage/ScrollToTopArrow';
 import ConsultationForm from './components/Forms/ConsultationForm';
+import PrivacyPolicy from './components/Legal/PrivacyPolicy';
+import TermsAndConditions from './components/Legal/TermsAndConditions';
 
 
 const App = () => {
@@ -28,6 +30,9 @@ const App = () => {
           <Route path="/AboutPage" element={<AboutPage />} />
           <Route path="/OnlineCoaching" element={<OnlineCoaching />} />
           <Route path ="/advent-calendar" element={<AdventCalendarPage/>}/>
+          <Route path ="/consultation-form" element={<ConsultationForm/>}/>
+          <Route path ="/privacy" element={<PrivacyPolicy/>}/>
+          <Route path ="/terms" element={<TermsAndConditions/>}/>
           <Route path ="/consultation-form" element={<ConsultationForm/>}/>
           {/* Add more routes as needed */}
         </Routes>

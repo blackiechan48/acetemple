@@ -127,7 +127,7 @@ const ConsultationForm = () => {
   return (
     <FormContainer>
       <form onSubmit={handleSubmit}>
-        <FormTitle>Get started Form </FormTitle>
+        <FormTitle>Get started Form</FormTitle>
         <FormSubtitle>Please fill out this form to share a bit about yourself. Once submitted, you'll be able to choose a time for us to connect on a call.</FormSubtitle>
         
         <Label htmlFor="name">Name *</Label>
@@ -150,7 +150,15 @@ const ConsultationForm = () => {
           onChange={handleChange} 
         />
         
-      
+        <Label htmlFor="phone">Phone Number *</Label>
+        <Input 
+          type="text" 
+          name="phone" 
+          id="phone"
+          required 
+          value={formData.phone} 
+          onChange={handleChange} 
+        />
         
         <Label htmlFor="goal">If we were to work together, what would your 6-month goal be? *</Label>
         <Textarea 

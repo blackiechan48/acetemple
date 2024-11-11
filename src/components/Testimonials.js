@@ -16,7 +16,7 @@ const HeaderImage = styled.img`
   width: 100%;
   height: auto;
   object-fit: cover;
-  max-height: 300px; /* Adjust as needed */
+  max-height: 300px;
 `;
 
 const FullScreenContainer = styled.div`
@@ -87,6 +87,39 @@ const TestimonialText = styled.div`
   }
 `;
 
+// New Calendly section styled component
+const CalendlySection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+`;
+
+const CalendlyLink = styled.a`
+  display: inline-block;
+  padding: 12px 20px;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #0073e6;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #005bb5;
+  }
+`;
+
 const Testimonials = () => {
   const testimonialsData = [
     {
@@ -140,6 +173,19 @@ const Testimonials = () => {
             <TestimonialText>{testimonial.text}</TestimonialText>
           </TestimonialSection>
         ))}
+
+        {/* Calendly Section */}
+        <CalendlySection>
+          <h2>Your Transformation Is Just One Call Away!</h2>
+          <p>Schedule a time for your consultation to get started on your fitness journey!</p>
+          <CalendlyLink
+            href="https://calendly.com/acetemple/consultation?month=2024-07"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book Now
+          </CalendlyLink>
+        </CalendlySection>
       </FullScreenContainer>
     </>
   );

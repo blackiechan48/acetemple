@@ -227,9 +227,9 @@ const PersonalTraining = () => {
             </VideoContainer>
           ))}
         </VideoBox>
-        <ButtonWrapper>
+        {/* <ButtonWrapper>
           <Button href="#" style={{ marginTop: '10px' }}>Watch More</Button>
-        </ButtonWrapper>
+        </ButtonWrapper> */}
       </VideoSection>
 
       <Container>
