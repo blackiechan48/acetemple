@@ -185,7 +185,8 @@ const PersonalTraining = () => {
   const videoLinks = [
     "https://www.youtube.com/embed/JtaXCa4ycV4",
     "https://www.youtube.com/embed/BkEPYL8iY_Q",
-    "https://www.youtube.com/embed/zhkdIqgdQH0"
+    // "https://www.youtube.com/embed/zhkdIqgdQH0",
+    "https://www.youtube.com/embed/2dRgbOOOSGQ",
   ];
 
   return (
