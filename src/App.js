@@ -9,7 +9,7 @@ import HomePage from './components/HomePage/HomePage';
 import AboutPage from './components/AboutPage';
 import OnlineCoaching from './components/Services/OnlineCoaching';
 import TransformationChallenge from './components/Services/8Weeks challenge/TransformationChallenge';
-import BodyTransformationForm from './components/Services/8Weeks challenge/BodyTransformationForm';
+import ChallengeClosedPage from './components/Services/8Weeks challenge/ChallengeClosedPage';
 // import AdventCalendarPage from './components/AdventCalendarPage';
 import ScrollToTopArrow from './components/HomePage/ScrollToTopArrow';
 import ConsultationForm from './components/Forms/ConsultationForm';
@@ -28,7 +28,7 @@ const App = () => {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/personaltraining" element={<PTPage />} />
           <Route path="8weekschallenge" element ={<TransformationChallenge />}/>
-          <Route path="8weeks-challenge" element ={<BodyTransformationForm />}/>
+          <Route path="ChallengeClosed" element ={<ChallengeClosedPage />}/>
           <Route path="/AboutPage" element={<AboutPage />} />
           <Route path="/OnlineCoaching" element={<OnlineCoaching />} />
           {/* <Route path ="/advent-calendar" element={<AdventCalendarPage/>}/> */}
