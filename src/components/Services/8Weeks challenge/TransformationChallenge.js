@@ -103,7 +103,7 @@ const ChallengeClosedPage = () => {
     <Container>
       <Title>Body Transformation Challenge Closed</Title>
       <Message>
-        <strong>The Body Transformation Challenge</strong> is currently closed. Enter your first name and email below to be the first to know when the next challenge opens and receive an <strong>early bird discount!</strong>
+        The Body Transformation Challenge is currently closed. Enter your first name and email below to be the first to know when the next challenge opens and receive an early bird discount!
       </Message>
       <form onSubmit={handleEmailSubmit}>
         <Input
