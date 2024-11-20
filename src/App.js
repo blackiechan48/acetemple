@@ -10,7 +10,7 @@ import AboutPage from './components/AboutPage';
 import OnlineCoaching from './components/Services/OnlineCoaching';
 import TransformationChallenge from './components/Services/8Weeks challenge/TransformationChallenge';
 import ChallengeClosedPage from './components/Services/8Weeks challenge/ChallengeClosedPage';
-// import AdventCalendarPage from './components/AdventCalendarPage';
+import AdventCalendarPage from './components/AdventCalendarPage';
 import ScrollToTopArrow from './components/HomePage/ScrollToTopArrow';
 import ConsultationForm from './components/Forms/ConsultationForm';
 import PrivacyPolicy from './components/Legal/PrivacyPolicy';
@@ -31,7 +31,7 @@ const App = () => {
           <Route path="ChallengeClosed" element ={<ChallengeClosedPage />}/>
           <Route path="/AboutPage" element={<AboutPage />} />
           <Route path="/OnlineCoaching" element={<OnlineCoaching />} />
-          {/* <Route path ="/advent-calendar" element={<AdventCalendarPage/>}/> */}
+          <Route path ="/advent-calendar" element={<AdventCalendarPage/>}/>
           <Route path ="/consultation-form" element={<ConsultationForm/>}/>
           <Route path ="/privacy" element={<PrivacyPolicy/>}/>
           <Route path ="/terms" element={<TermsAndConditions/>}/>
