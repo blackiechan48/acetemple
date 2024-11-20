@@ -1,3 +1,4 @@
+// src/components/OnlineCoaching.js
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
@@ -13,9 +14,9 @@ const appear = keyframes`
   }
 `;
 
-// Header section
+// Header section styling
 const HeaderSection = styled.section`
-  background-image: url('images/ballslam.png'); /* Ensure path is correct */
+  background-image: url('images/ballslam.png');
   background-size: cover;
   background-position: center;
   height: 600px;
@@ -31,16 +32,7 @@ const HeaderSection = styled.section`
   }
 `;
 
-// const HeaderTitle = styled.h1`
-//   font-size: 2.5rem;
-//   font-weight: bold;
-
-//   @media (max-width: 600px) {
-//     font-size: 2rem;
-//   }
-// `;
-
-// Main content section with black background
+// Main content section styling
 const MainSection = styled.section`
   background-color: black;
   color: white;
@@ -49,6 +41,29 @@ const MainSection = styled.section`
 
   @media (max-width: 600px) {
     padding: 30px 15px;
+  }
+`;
+
+// Reusable Button styled component for linking to Calendly
+const StyledLinkButton = styled.a`
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: darkred;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.8rem;
+    padding: 8px 16px;
   }
 `;
 
@@ -94,26 +109,7 @@ const TextBox = styled.p`
   }
 `;
 
-const CenterButton = styled.button`
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: darkred;
-  }
-
-  @media (max-width: 600px) {
-    font-size: 0.8rem;
-    padding: 8px 16px;
-  }
-`;
-
-// Points Section
+// Points section styling
 const PointsSection = styled.section`
   padding: 50px 20px;
   display: grid;
@@ -135,7 +131,7 @@ const PointsSection = styled.section`
   }
 `;
 
-const PointImage = styled.img`
+const PointImage = styled.img.attrs({ loading: 'lazy' })`
   width: 8%;
   height: auto;
   border-radius: 8px;
@@ -164,29 +160,6 @@ const PointText = styled.p`
   }
 `;
 
-const CallbackButton = styled.button`
-  grid-column: span 2;
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
-
-  &:hover {
-    background-color: darkred;
-  }
-
-  @media (max-width: 600px) {
-    font-size: 0.9rem;
-    padding: 8px 16px;
-    grid-column: 1;
-  }
-`;
-
-// Centered Image Section
 const CenterImageSection = styled.section`
   display: flex;
   justify-content: center;
@@ -198,13 +171,12 @@ const CenterImageSection = styled.section`
   }
 `;
 
-const CenterImage = styled.img`
+const CenterImage = styled.img.attrs({ loading: 'lazy' })`
   max-width: 100%;
   height: auto;
   border-radius: 1px;
 `;
 
-// FAQ Section
 const FAQSection = styled.section`
   padding: 1px 20px;
   background-color: #f9f9f9;
@@ -268,11 +240,12 @@ const FAQList = () => {
   };
 
   const faqs = [
-    { question: 'How does online coaching work?', answer: 'Our online coaching program offers customized...' },
-    { question: 'What equipment will I need?', answer: 'You only need basic equipment...' },
-    { question: 'How is my progress tracked?', answer: 'We track your progress through regular check-ins...' },
-    { question: 'Can I cancel my subscription anytime?', answer: 'Yes, our programs are flexible...' },
-    { question: 'What if I have specific dietary requirements?', answer: 'We personalize each nutrition plan...' },
+    { question: 'How does online coaching work?', answer: 'Our online coaching program offers customized training and nutrition plans.' },
+    { question: 'What equipment will I need?', answer: 'We design workouts based on what you have available, from basic equipment to full gyms.' },
+    { question: 'How is my progress tracked?', answer: 'Through measurements, photos, and workout logs, with regular check-ins.' },
+    { question: 'Can I cancel my subscription anytime?', answer: 'Yes, you can cancel anytime without penalty.' },
+    { question: 'What if I have specific dietary requirements?', answer: 'We customize your meal plan to fit any dietary needs.' },
+    { question: 'What if I am a beginner?', answer: 'We welcome all levels! We start at a comfortable level and build from there.' },
   ];
 
   return (
@@ -280,7 +253,7 @@ const FAQList = () => {
       <FAQTitle>Frequently Asked Questions</FAQTitle>
       <FAQSubtitle>Get answers to your most pressing questions</FAQSubtitle>
       {faqs.map((faq, index) => (
-        <FAQItem key={index} onClick={() => toggleFAQ(index)}>
+        <FAQItem key={index} onClick={() => toggleFAQ(index)}> 
           <Question>{faq.question}</Question>
           <Answer isOpen={openFAQ === index}>{faq.answer}</Answer>
         </FAQItem>
@@ -289,7 +262,6 @@ const FAQList = () => {
   );
 };
 
-// Text Section with button
 const TextSection = styled.section`
   padding: 50px 20px;
   text-align: center;
@@ -332,49 +304,31 @@ const FinalTextBox = styled.p`
   }
 `;
 
-const EndButton = styled.button`
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: darkred;
-  }
-
-  @media (max-width: 600px) {
-    font-size: 0.8rem;
-    padding: 8px 16px;
-  }
-`;
-
 // Main Component
 const OnlineCoaching = () => {
   const points = [
-    { title: 'Coaching', description: 'My role is to simplify the journey for you by crafting a truly customized plan that is clear, easy to follow, and designed to help you see real progress every week.', image: '/images/coachingicon.webp' },
-    { title: 'Nutrition Tracking', description: 'Understanding what to eat, how much to consume, and the timing of your meals can be the key to achieving your fitness goals. This year, take control of your progress and do not leave your success to chance', image: 'images/nutritionicon.png' },
-    { title: 'Workout Plans', description: 'Having a structured workout plan that aligns with your fitness objectives is essential for maximizing your results. Whether you want to build strength, lose weight, or improve your overall fitness, a personalized approach ensures you stay on track.', image: 'images/workouticon.png' },
-    { title: 'Habit Tracking', description: 'I prioritize you as an individual, focusing on optimizing your habits and achieving an effective balance of energy. This tailored approach is designed to maximize your results and help you reach your fitness goals efficiently', image: 'images/habiticon.png' },
-    { title: 'Accountability', description: 'I am dedicated to holding you accountable on your fitness journey. By providing ongoing support and motivation, I ensure you stay on track with your goals. Together, we will celebrate your achievements and tackle challenges, helping you maintain your commitment and drive toward lasting results.', image: 'images/accountabilityicon.png' },
-    { title: 'Support', description: 'Throughout your journey, you will have my unwavering support and guidance. With access to me at all times, I will be right there in your corner, coaching you every step of the way. In challenging moments, knowing you are on the right path makes all the difference. Together, we will ll ensure you stay motivated and focused on achieving your goals!', image: 'images/supporticon.png' },
+    { title: 'Coaching', description: 'My role is to simplify the journey for you...', image: '/images/coachingicon.webp' },
+    { title: 'Nutrition Tracking', description: 'Understanding what to eat...', image: '/images/nutritionicon.png' },
+    { title: 'Workout Plans', description: 'Having a structured workout plan...', image: '/images/workouticon.png' },
+    { title: 'Habit Tracking', description: 'I focus on optimizing your habits and achieving effective energy balance...', image: '/images/habiticon.png' },
+    { title: 'Accountability', description: 'I hold you accountable, providing ongoing support and motivation...', image: '/images/accountabilityicon.png' },
+    { title: 'Support', description: 'Throughout your journey, you’ll have my full support and guidance...', image: '/images/supporticon.png' },
   ];
 
   return (
     <div>
       <HeaderSection>
-        {/* <HeaderTitle>Cutting Edge Online Coaching Program</HeaderTitle> */}
+        {/* Header Content */}
       </HeaderSection>
       <MainSection>
         <Subtitle>Created By Olu Olayeni</Subtitle>
-        <Title>Join our Online Coaching Program</Title>
+        <Title>THE BEST COACHING SERVICE YOU WILL RECEIVE</Title>
         <TextBox>
-          EDo you want to <strong>drop belly fat</strong> enhace your strentgh and <strong>tone up </strong>
-          so you can be in the best <strong>physical and mental</strong> form of your life?
-          </TextBox>
-        <CenterButton>Get Started</CenterButton>
+          Do you want to <strong>drop belly fat</strong>, enhance your strength, and <strong>tone up</strong> to be in the best <strong>physical and mental</strong> shape of your life?
+        </TextBox>
+        <StyledLinkButton href="https://calendly.com/acetemple/consultation?month=2024-07" target="_blank" rel="noopener noreferrer">
+          Get Started
+        </StyledLinkButton>
       </MainSection>
       <PointsSection>
         {points.map((point, index) => (
@@ -384,7 +338,6 @@ const OnlineCoaching = () => {
             <PointText>{point.description}</PointText>
           </div>
         ))}
-        <CallbackButton>Book a Callback</CallbackButton>
       </PointsSection>
       <CenterImageSection>
         <CenterImage src="/images/otbackground.png" alt="Center Image Description" />
@@ -393,7 +346,9 @@ const OnlineCoaching = () => {
       <TextSection>
         <SectionTitle>Ready to Begin?</SectionTitle>
         <FinalTextBox>Sign up today and take the first step towards a healthier you!</FinalTextBox>
-        <EndButton>Join Now</EndButton>
+        <StyledLinkButton href="https://calendly.com/acetemple/consultation?month=2024-07" target="_blank" rel="noopener noreferrer">
+          Get Started
+        </StyledLinkButton>
       </TextSection>
     </div>
   );

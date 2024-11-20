@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 // Sample content for each day
@@ -30,6 +30,7 @@ const calendarContent = [
 ];
 
 // Styled Components
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -44,6 +45,38 @@ const Title = styled.h1`
   color: #8b0000;
   text-align: center;
   margin-bottom: 20px;
+`;
+
+const ComingSoonContainer = styled.div`
+  max-width: 500px;
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+`;
+
+const EmailInput = styled.input`
+  padding: 10px;
+  margin-top: 15px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  width: 100%;
+`;
+
+const SubmitButton = styled.button`
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-top: 10px;
+  color: white;
+  background-color: #8b0000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: #a00000;
+  }
 `;
 
 const ArrowContainer = styled.div`
@@ -148,13 +181,25 @@ const LinkButton = styled.a`
 `;
 
 const AdventCalendarPage = () => {
+  const [isLocked, setIsLocked] = useState(true);
+  const [email, setEmail] = useState("");
   const [openDoors, setOpenDoors] = useState({});
   const [selectedDay, setSelectedDay] = useState(null);
-  const currentDate = new Date().getDate();
-  const testingMode = new Date().getMonth() === 10; // November
+
+  useEffect(() => {
+    const today = new Date();
+    if (today.getMonth() === 11 && today.getDate() >= 1) {
+      setIsLocked(false);
+    }
+  }, []);
+
+  const handleEmailSubmit = () => {
+    alert(`Thank you! We’ll remind you on December 1st.`);
+    setEmail("");
+  };
 
   const handleDoorClick = (day) => {
-    if (testingMode || day <= currentDate) {
+    if (!isLocked && day <= new Date().getDate()) {
       setSelectedDay(day);
       setOpenDoors((prev) => ({ ...prev, [day]: true }));
     }
@@ -171,28 +216,45 @@ const AdventCalendarPage = () => {
   return (
     <Container>
       <Title>Digital Advent Calendar</Title>
-      <ArrowContainer>
-        <Snowflake>❄️</Snowflake>
-        <Snowflake>❄️</Snowflake>
-      </ArrowContainer>
-      <CalendarContainer>
-        {Array.from({ length: 24 }, (_, index) => {
-          const day = index + 1;
-          const isUnlocked = openDoors[day] || testingMode || day <= currentDate;
-          const isOpen = isUnlocked;
 
-          return (
-            <CalendarDoor
-              key={day}
-              isOpen={isOpen}
-              onClick={() => handleDoorClick(day)}
-              isUnlocked={isUnlocked}
-            >
-              {isOpen ? day : '🎁'}
-            </CalendarDoor>
-          );
-        })}
-      </CalendarContainer>
+      {isLocked ? (
+        <ComingSoonContainer>
+          <p>Your Health and Fitness Calendar is coming soon!</p>
+          <p>Drop your email below to be reminded when it’s live on December 1st.</p>
+          <EmailInput
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <SubmitButton onClick={handleEmailSubmit}>Remind Me</SubmitButton>
+        </ComingSoonContainer>
+      ) : (
+        <>
+          <ArrowContainer>
+            <Snowflake>❄️</Snowflake>
+            <Snowflake>❄️</Snowflake>
+          </ArrowContainer>
+          <CalendarContainer>
+            {Array.from({ length: 24 }, (_, index) => {
+              const day = index + 1;
+              const isUnlocked = openDoors[day] || day <= new Date().getDate();
+              const isOpen = isUnlocked;
+
+              return (
+                <CalendarDoor
+                  key={day}
+                  isOpen={isOpen}
+                  onClick={() => handleDoorClick(day)}
+                  isUnlocked={isUnlocked}
+                >
+                  {isOpen ? day : '🎁'}
+                </CalendarDoor>
+              );
+            })}
+          </CalendarContainer>
+        </>
+      )}
 
       {selectedDayContent && (
         <CardOverlay isVisible={!!selectedDay}>

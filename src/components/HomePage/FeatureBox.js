@@ -111,7 +111,7 @@ const FeatureBoxes = () => {
           <a href="/personaltraining">Find Out More</a>
         </FeatureBox>
         <FeatureBox>
-          <img src="images/onlinept.jpg" alt="Online Coaching" />
+          <img src="images/coaching.png" alt="Online Coaching" />
           <h3>Online Coaching</h3>
           <p>Access coaching sessions from the comfort of your home.</p>
           <p>Achieve incredible results from anywhere with a personalized plan and accountability.</p>

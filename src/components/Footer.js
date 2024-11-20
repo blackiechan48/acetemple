@@ -64,7 +64,6 @@ const Footer = () => {
       <LinksContainer>
         <StyledLink to="/privacy">Privacy Policy</StyledLink>
         <StyledLink to="/terms">Terms and Conditions</StyledLink>
-        <StyledLink to="/cookies">Cookie Policy</StyledLink>
       </LinksContainer>
       <LinksContainer>
         <SocialLink href="https://www.instagram.com/acetemple" target="_blank" rel="noopener noreferrer">

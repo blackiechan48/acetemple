@@ -185,7 +185,8 @@ const PersonalTraining = () => {
   const videoLinks = [
     "https://www.youtube.com/embed/JtaXCa4ycV4",
     "https://www.youtube.com/embed/BkEPYL8iY_Q",
-    "https://www.youtube.com/embed/zhkdIqgdQH0"
+    // "https://www.youtube.com/embed/zhkdIqgdQH0",
+    "https://www.youtube.com/embed/2dRgbOOOSGQ",
   ];
 
   return (
@@ -227,9 +228,9 @@ const PersonalTraining = () => {
             </VideoContainer>
           ))}
         </VideoBox>
-        <ButtonWrapper>
+        {/* <ButtonWrapper>
           <Button href="#" style={{ marginTop: '10px' }}>Watch More</Button>
-        </ButtonWrapper>
+        </ButtonWrapper> */}
       </VideoSection>
 
       <Container>
