@@ -15,16 +15,28 @@ const FullScreenContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
+  max-width: 500px; /* Prevents content from becoming too wide */
+  margin: 0 auto; /* Centers the container */
   height: 100vh;
   text-align: center;
   background: linear-gradient(135deg, #1a1a1a, #333333);
   color: white;
   padding: 20px;
-  animation: ${fadeIn} 1s ease-in;
+  box-sizing: border-box; /* Ensures padding doesn't overflow */
 
-  @media (max-width: 768px) {
+  @media (max-width: 668px) {
     padding: 15px;
+  }
+`;
+
+const Logo = styled.img`
+  width: 250px; /* Adjust the size */
+  height: auto;
+  margin-bottom: 20px;
+
+  @media (max-width: 668px) {
+    width: 120px;
   }
 `;
 
@@ -33,7 +45,7 @@ const Title = styled.h1`
   color: #f4ce14;
   margin-bottom: 10px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 668px) {
     font-size: 6vw; /* Scales font based on viewport width */
   }
 `;
@@ -43,7 +55,7 @@ const Subtitle = styled.h2`
   color: #e0e0e0;
   margin-bottom: 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 668px) {
     font-size: 4vw;
   }
 `;
@@ -55,7 +67,7 @@ const CountdownContainer = styled.div`
   margin-bottom: 20px;
   flex-wrap: wrap; /* Ensures wrapping on small screens */
 
-  @media (max-width: 768px) {
+  @media (max-width: 668px) {
     gap: 10px;
   }
 `;
@@ -70,7 +82,7 @@ const CountdownBox = styled.div`
   width: 80px;
   color: #1a1a1a;
 
-  @media (max-width: 768px) {
+  @media (max-width: 668px) {
     width: 70px;
     padding: 10px 15px;
   }
@@ -80,32 +92,12 @@ const CountdownLabel = styled.span`
   font-size: 0.8rem;
   font-weight: bold;
 
-  @media (max-width: 768px) {
+  @media (max-width: 668px) {
     font-size: 0.7rem;
   }
 `;
 
-const Button = styled.a`
-  display: inline-block;
-  padding: 12px 20px;
-  margin-top: 20px;
-  font-size: 1rem;
-  color: #1a1a1a;
-  background: #f4ce14;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease-in-out;
 
-  &:hover {
-    background: #d4b012;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-    padding: 10px 18px;
-  }
-`;
 
 const SocialMediaContainer = styled.div`
   display: flex;
@@ -126,12 +118,10 @@ const SocialIcon = styled.a`
     color: #d4b012;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 668px) {
     font-size: 1.2rem;
   }
 `;
-
-
 
 // Countdown Logic
 const calculateTimeLeft = () => {
@@ -173,6 +163,7 @@ const UnderMaintenance = () => {
 
   return (
     <FullScreenContainer>
+      <Logo src={"/LOGO FULL_.png"} alt="Logo" />
       <Title>We’re Getting Ready!</Title>
       <Subtitle>Our website is under construction. We’ll be back soon!</Subtitle>
 
@@ -186,8 +177,6 @@ const UnderMaintenance = () => {
         ))}
       </CountdownContainer>
 
-      {/* Notify Me Button */}
-      <Button href="mailto:info@example.com">Notify Me</Button>
 
       {/* Social Media Links */}
       <SocialMediaContainer>
