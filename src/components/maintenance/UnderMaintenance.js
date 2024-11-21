@@ -131,15 +131,7 @@ const SocialIcon = styled.a`
   }
 `;
 
-const ResponsiveImage = styled.img`
-  max-width: 100%; /* Ensure it scales within the container */
-  height: auto;
-  margin-bottom: 20px;
 
-  @media (max-width: 768px) {
-    margin-bottom: 15px;
-  }
-`;
 
 // Countdown Logic
 const calculateTimeLeft = () => {
@@ -181,8 +173,6 @@ const UnderMaintenance = () => {
 
   return (
     <FullScreenContainer>
-      {/* <ResponsiveImage src="/images/collage.png" alt="Header Image" /> */}
-
       <Title>We’re Getting Ready!</Title>
       <Subtitle>Our website is under construction. We’ll be back soon!</Subtitle>
 
