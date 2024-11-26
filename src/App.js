@@ -8,7 +8,7 @@ import PTPage from './components/Services/PTPage';
 import HomePage from './components/HomePage/HomePage';
 import AboutPage from './components/AboutPage';
 import OnlineCoaching from './components/Services/OnlineCoaching';
-import TransformationChallenge from './components/Services/8Weeks challenge/TransformationChallenge';
+// import TransformationChallenge from './components/Services/8Weeks challenge/TransformationChallenge';
 import ChallengeClosedPage from './components/Services/8Weeks challenge/ChallengeClosedPage';
 import AdventCalendarPage from './components/AdventCalendarPage';
 import ScrollToTopArrow from './components/HomePage/ScrollToTopArrow';
@@ -27,7 +27,7 @@ const App = () => {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/personaltraining" element={<PTPage />} />
-          <Route path="8weekschallenge" element ={<TransformationChallenge />}/>
+          {/* <Route path="8weekschallenge" element ={<TransformationChallenge />}/> */}
           <Route path="ChallengeClosed" element ={<ChallengeClosedPage />}/>
           <Route path="/AboutPage" element={<AboutPage />} />
           <Route path="/OnlineCoaching" element={<OnlineCoaching />} />
