@@ -47,38 +47,6 @@ const Title = styled.h1`
   margin-bottom: 20px;
 `;
 
-const ComingSoonContainer = styled.div`
-  max-width: 500px;
-  text-align: center;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-`;
-
-const EmailInput = styled.input`
-  padding: 10px;
-  margin-top: 15px;
-  font-size: 1rem;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  width: 100%;
-`;
-
-const SubmitButton = styled.button`
-  padding: 10px 20px;
-  font-size: 1rem;
-  margin-top: 10px;
-  color: white;
-  background-color: #8b0000;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  &:hover {
-    background-color: #a00000;
-  }
-`;
-
 const ArrowContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -181,7 +149,6 @@ const LinkButton = styled.a`
 `;
 
 const AdventCalendarPage = () => {
-  // const [email, setEmail] = useState("");
   const [openDoors, setOpenDoors] = useState({});
   const [selectedDay, setSelectedDay] = useState(null);
 
@@ -195,11 +162,6 @@ const AdventCalendarPage = () => {
   useEffect(() => {
     localStorage.setItem("openDoors", JSON.stringify(openDoors));
   }, [openDoors]);
-
-  // const handleEmailSubmit = () => {
-  //   alert(`Thank you! We’ll remind you when the challenge goes live.`);
-  //   setEmail("");
-  // };
 
   const handleDoorClick = (day) => {
     const today = new Date();
@@ -245,10 +207,7 @@ const AdventCalendarPage = () => {
                 key={day}
                 isOpen={isOpen}
                 isUnlocked={isUnlocked}
-                onClick={isUnlocked ? () => handleDoorClick(day) : null} // Fully prevent interaction on locked doors
-                style={{
-                  pointerEvents: isUnlocked ? "auto" : "none", // Disable interaction visually
-                }}
+                onClick={isUnlocked ? () => handleDoorClick(day) : null} // Prevent clicking on locked doors
               >
                 {day} {/* Always display the day number */}
               </CalendarDoor>
