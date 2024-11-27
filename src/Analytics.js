@@ -14,4 +14,14 @@ const trackEvent = (category, action, label) => {
   console.log(`Tracked event: ${category}, ${action}, ${label}`); // Debugging log
 };
 
+const handleButtonClick = () => {
+    ReactPixel.track('Lead', {
+      value: 10.00,
+      currency: 'USD',
+    });
+    console.log('Facebook Pixel Event: Lead');
+  };
+  
+  <button onClick={handleButtonClick}>Sign Up</button>;
+  
 export { initializeAnalytics, trackPageView, trackEvent };
