@@ -82,12 +82,12 @@ const Thumbnail = styled.img.attrs({ loading: 'lazy' })`
 
 const ForeverMission = () => {
   const images = [
-    "/images/Home progress pics/Karen.png",
-    "/images/Home progress pics/Tom.png",
-    "/images/Home progress pics/Tiphaine.png",
-    "/images/Home progress pics/Paida.png",
-    "/images/Home progress pics/shereen.png",
-    "/images/Home progress pics/ali.png",
+    "/images/homepage/Home progress pics/Karen.png",
+    "/images/homepage/Home progress pics/Tom.png",
+    "/images/homepage/Home progress pics/Tiphaine.png",
+    "/images/homepage/Home progress pics/Paida.png",
+    "/images/homepage/Home progress pics/shereen.png",
+    "/images/homepage/Home progress pics/ali.png",
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);

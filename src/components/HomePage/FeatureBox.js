@@ -122,7 +122,8 @@ const FeatureBoxes = () => {
           <h3>Challenges</h3>
           <p>Join our fitness challenges and push your limits.</p>
           <p>Work alongside like-minded individuals in a supportive community to reach your fitness goals.</p>
-          <a href="/8weekschallenge">Find Out More</a>
+          {/* <a href="/8weekschallenge">Find Out More</a> */}
+          <a href="/ChallengeClosed">Find Out More</a>
         </FeatureBox>
       </FeatureBoxesContainer>
     </>

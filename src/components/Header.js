@@ -100,7 +100,7 @@ const Header = () => {
         <NavLink href="/testimonials">Testimonials</NavLink>
         <NavLink href="/services">Services</NavLink>
         <NavLink href="/ChallengeClosed">BodyTransformation</NavLink>
-        <NavLink href="/8weekschallenge">8 Weeks Challenge</NavLink>
+        {/* <NavLink href="/8weekschallenge">8 Weeks Challenge</NavLink> */}
         <NavLink href="/advent-calendar">Advent calendar</NavLink>
       </Nav>
     </HeaderContainer>
