@@ -11,16 +11,16 @@ const PageContainer = styled.div`
   padding: 20px;
   background: linear-gradient(135deg, #f4f4f4, #e8e8e8);
   font-family: "Arial", sans-serif;
-  box-sizing: border-box; // Ensure padding doesn't cause overflow
+  box-sizing: border-box;
 `;
 
 const TitleSection = styled.div`
   text-align: center;
   margin-bottom: 30px;
-  padding: 0 10px; // Prevent overflow on mobile
+  padding: 0 10px;
 
   @media (max-width: 768px) {
-    padding: 0 5px; // Reduce padding further for smaller screens
+    padding: 0 5px;
   }
 `;
 
@@ -31,14 +31,14 @@ const MainTitle = styled.h1`
   margin-bottom: 10px;
 
   @media (max-width: 768px) {
-    font-size: 2rem; // Adjust font size for mobile
+    font-size: 2rem;
   }
 `;
 
 const SubTitle = styled.p`
   font-size: 1.2rem;
   color: #222831;
-  max-width: 800px; // Constrain width
+  max-width: 800px;
   width: 100%;
   margin: 0 auto;
 
@@ -48,7 +48,7 @@ const SubTitle = styled.p`
 
   @media (max-width: 768px) {
     font-size: 1rem;
-    max-width: 90%; // Ensure it fits on mobile
+    max-width: 90%;
   }
 `;
 
@@ -57,33 +57,72 @@ const FormContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 500px; // Prevent form from getting too wide
+  max-width: 500px;
   width: 90%;
   background: white;
-  padding: 20px; // Adjusted for mobile
+  padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box; // Prevent padding overflow
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
-    padding: 15px; // Smaller padding for mobile
+    padding: 15px;
   }
 `;
 
 const StyledInput = styled.input`
-  width: 100%; // Full width within the container
+  width: 100%;
   padding: 12px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 1rem;
-  box-sizing: border-box; // Ensure padding fits within width
+  box-sizing: border-box;
 
   &:focus {
     outline: none;
     border-color: #f4ce14;
     box-shadow: 0 0 5px rgba(244, 206, 20, 0.5);
   }
+`;
+
+const StyledSelect = styled.select`
+  width: 48%; /* Adjust to fit side by side */
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: white;
+
+  &:focus {
+    outline: none;
+    border-color: #f4ce14;
+    box-shadow: 0 0 5px rgba(244, 206, 20, 0.5);
+  }
+`;
+
+const FlexRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Ensures the row spans the full width of the form */
+  gap: 4%; /* Add spacing between the dropdowns */
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Stack on smaller screens */
+    gap: 15px; /* Add spacing for stacked layout */
+  }
+`;
+
+const Label = styled.label`
+  font-size: 1rem;
+  font-weight: bold;
+  color: #222831;
+  margin-bottom: 10px;
+  display: block;
+  text-align: left;
+  width: 100%; /* Ensure label spans full width */
 `;
 
 const SubmitButton = styled.input`
@@ -95,7 +134,7 @@ const SubmitButton = styled.input`
   font-size: 1.1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 100%; // Ensure button scales with input fields
+  width: 100%;
 
   &:hover {
     background-color: #d94343;
@@ -103,7 +142,7 @@ const SubmitButton = styled.input`
 
   @media (max-width: 768px) {
     font-size: 1rem;
-    padding: 10px; // Adjust padding for smaller screens
+    padding: 10px;
   }
 `;
 
@@ -113,11 +152,14 @@ const FooterText = styled.p`
   margin-top: 15px;
 
   @media (max-width: 768px) {
-    font-size: 0.8rem; // Adjust font size for mobile
+    font-size: 0.8rem;
   }
 `;
 
 const ChallengeClosedPage = () => {
+  // Create an array of days (1-31)
+  const days = Array.from({ length: 31 }, (_, i) => i + 1);
+
   return (
     <PageContainer>
       {/* Title Section */}
@@ -152,14 +194,37 @@ const ChallengeClosedPage = () => {
             id="mce-FNAME"
             placeholder="Enter your first name"
           />
-          <StyledInput
-            type="text"
-            name="BIRTHDAY"
-            id="mce-BIRTHDAY"
-            placeholder="Enter your birthday (DD/MM)"
-            pattern="^\\d{2}/\\d{2}$"
-            title="Please enter your birthday in the format DD/MM (e.g., 25/12)"
-          />
+          {/* Birth Date Section */}
+          <Label htmlFor="birthday">Birthday</Label>
+          <FlexRow id="birthday">
+            <StyledSelect name="BIRTHDAY" id="mce-BIRTHDAY" required>
+              <option value="" disabled selected>
+                Select day
+              </option>
+              {days.map((day) => (
+                <option key={day} value={day}>
+                  {day}
+                </option>
+              ))}
+            </StyledSelect>
+            <StyledSelect name="BIRTHMONTH" id="mce-BIRTHMONTH" required>
+              <option value="" disabled selected>
+                Select month
+              </option>
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+              <option value="April">April</option>
+              <option value="May">May</option>
+              <option value="June">June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="September">September</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
+            </StyledSelect>
+          </FlexRow>
           <SubmitButton
             type="submit"
             value="Notify Me"
