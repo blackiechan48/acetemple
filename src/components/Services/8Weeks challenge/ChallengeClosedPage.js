@@ -122,7 +122,7 @@ const ChallengeClosedPage = () => {
     <PageContainer>
       {/* Title Section */}
       <TitleSection>
-        <MainTitle>Body Transformation Challenge Closed</MainTitle>
+        <MainTitle>New Challenge Coming Soon!</MainTitle>
         <SubTitle>
           <strong>The Body Transformation Challenge</strong> is currently closed. Enter your first name and email below
           to be the first to know when the next challenge opens and receive an <strong>early bird discount!</strong>

@@ -181,17 +181,27 @@ const LinkButton = styled.a`
 `;
 
 const AdventCalendarPage = () => {
-  const [isLocked, setIsLocked] = useState(true);
+  const [isLocked, setIsLocked] = useState(true); // Calendar is unlocked for debugging
   const [email, setEmail] = useState("");
   const [openDoors, setOpenDoors] = useState({});
   const [selectedDay, setSelectedDay] = useState(null);
 
+  // Load opened doors from local storage
   useEffect(() => {
+    const savedOpenDoors = JSON.parse(localStorage.getItem('openDoors')) || {};
+    setOpenDoors(savedOpenDoors);
+
+    // Lock the calendar until December
     const today = new Date();
     if (today.getMonth() === 11 && today.getDate() >= 1) {
       setIsLocked(false);
     }
   }, []);
+
+  // Save opened doors to local storage whenever they change
+  useEffect(() => {
+    localStorage.setItem('openDoors', JSON.stringify(openDoors));
+  }, [openDoors]);
 
   const handleEmailSubmit = () => {
     alert(`Thank you! We’ll remind you on December 1st.`);
@@ -210,7 +220,7 @@ const AdventCalendarPage = () => {
   };
 
   const selectedDayContent = selectedDay
-    ? calendarContent.find(dayContent => dayContent.day === selectedDay) || { title: "Content Not Found", videoLink: "", link: "#" }
+    ? calendarContent.find((dayContent) => dayContent.day === selectedDay) || { title: "Content Not Found", videoLink: "", link: "#" }
     : null;
 
   return (
@@ -239,7 +249,7 @@ const AdventCalendarPage = () => {
             {Array.from({ length: 24 }, (_, index) => {
               const day = index + 1;
               const isUnlocked = openDoors[day] || day <= new Date().getDate();
-              const isOpen = isUnlocked;
+              const isOpen = openDoors[day];
 
               return (
                 <CalendarDoor
