@@ -181,7 +181,7 @@ const LinkButton = styled.a`
 `;
 
 const AdventCalendarPage = () => {
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
   const [openDoors, setOpenDoors] = useState({});
   const [selectedDay, setSelectedDay] = useState(null);
 
@@ -196,10 +196,10 @@ const AdventCalendarPage = () => {
     localStorage.setItem("openDoors", JSON.stringify(openDoors));
   }, [openDoors]);
 
-  const handleEmailSubmit = () => {
-    alert(`Thank you! We’ll remind you when the challenge goes live.`);
-    setEmail("");
-  };
+  // const handleEmailSubmit = () => {
+  //   alert(`Thank you! We’ll remind you when the challenge goes live.`);
+  //   setEmail("");
+  // };
 
   const handleDoorClick = (day) => {
     const today = new Date();
