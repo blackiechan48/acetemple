@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 // Sample content for each day
 const calendarContent = [
-  { day: 1, title: "Day 1: Kickoff!", videoLink: "https://www.youtube.com/embed/video1", link: "/link1" },
+  { day: 1, title: "Day 1: Xmas Survival Guide!", videoLink: "https://www.youtube.com/embed/video1", link: "/link1" },
   { day: 2, title: "Day 2: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 3, title: "Day 3: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 4, title: "Day 4: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
@@ -181,37 +181,33 @@ const LinkButton = styled.a`
 `;
 
 const AdventCalendarPage = () => {
-  const [isLocked, setIsLocked] = useState(true); // Calendar is unlocked for debugging
   const [email, setEmail] = useState("");
   const [openDoors, setOpenDoors] = useState({});
   const [selectedDay, setSelectedDay] = useState(null);
 
   // Load opened doors from local storage
   useEffect(() => {
-    const savedOpenDoors = JSON.parse(localStorage.getItem('openDoors')) || {};
+    const savedOpenDoors = JSON.parse(localStorage.getItem("openDoors")) || {};
     setOpenDoors(savedOpenDoors);
-
-    // Lock the calendar until December
-    const today = new Date();
-    if (today.getMonth() === 11 && today.getDate() >= 1) {
-      setIsLocked(false);
-    }
   }, []);
 
   // Save opened doors to local storage whenever they change
   useEffect(() => {
-    localStorage.setItem('openDoors', JSON.stringify(openDoors));
+    localStorage.setItem("openDoors", JSON.stringify(openDoors));
   }, [openDoors]);
 
   const handleEmailSubmit = () => {
-    alert(`Thank you! We’ll remind you on December 1st.`);
+    alert(`Thank you! We’ll remind you when the challenge goes live.`);
     setEmail("");
   };
 
   const handleDoorClick = (day) => {
-    if (!isLocked && day <= new Date().getDate()) {
+    const today = new Date();
+    if (today.getMonth() === 11 && day <= today.getDate()) { // Ensure it's December
       setSelectedDay(day);
       setOpenDoors((prev) => ({ ...prev, [day]: true }));
+    } else {
+      alert("This door is not available yet!");
     }
   };
 
@@ -220,51 +216,46 @@ const AdventCalendarPage = () => {
   };
 
   const selectedDayContent = selectedDay
-    ? calendarContent.find((dayContent) => dayContent.day === selectedDay) || { title: "Content Not Found", videoLink: "", link: "#" }
+    ? calendarContent.find((dayContent) => dayContent.day === selectedDay) || {
+        title: "Content Not Found",
+        videoLink: "",
+        link: "#",
+      }
     : null;
 
   return (
     <Container>
-      <Title>Digital Advent Calendar</Title>
+      <Title>Digital Fitness Advent Calendar</Title>
 
-      {isLocked ? (
-        <ComingSoonContainer>
-          <p>Your Health and Fitness Calendar is coming soon!</p>
-          <p>Drop your email below to be reminded when it’s live on December 1st.</p>
-          <EmailInput
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <SubmitButton onClick={handleEmailSubmit}>Remind Me</SubmitButton>
-        </ComingSoonContainer>
-      ) : (
-        <>
-          <ArrowContainer>
-            <Snowflake>❄️</Snowflake>
-            <Snowflake>❄️</Snowflake>
-          </ArrowContainer>
-          <CalendarContainer>
-            {Array.from({ length: 24 }, (_, index) => {
-              const day = index + 1;
-              const isUnlocked = openDoors[day] || day <= new Date().getDate();
-              const isOpen = openDoors[day];
+      <>
+        <ArrowContainer>
+          <Snowflake>❄️</Snowflake>
+          <Snowflake>❄️</Snowflake>
+        </ArrowContainer>
+        <CalendarContainer>
+          {Array.from({ length: 24 }, (_, index) => {
+            const day = index + 1;
+            const today = new Date();
+            const isUnlocked =
+              today.getMonth() === 11 && day <= today.getDate(); // Unlock only for days in December
+            const isOpen = openDoors[day];
 
-              return (
-                <CalendarDoor
-                  key={day}
-                  isOpen={isOpen}
-                  onClick={() => handleDoorClick(day)}
-                  isUnlocked={isUnlocked}
-                >
-                  {isOpen ? day : '🎁'}
-                </CalendarDoor>
-              );
-            })}
-          </CalendarContainer>
-        </>
-      )}
+            return (
+              <CalendarDoor
+                key={day}
+                isOpen={isOpen}
+                isUnlocked={isUnlocked}
+                onClick={isUnlocked ? () => handleDoorClick(day) : null} // Fully prevent interaction on locked doors
+                style={{
+                  pointerEvents: isUnlocked ? "auto" : "none", // Disable interaction visually
+                }}
+              >
+                {day} {/* Always display the day number */}
+              </CalendarDoor>
+            );
+          })}
+        </CalendarContainer>
+      </>
 
       {selectedDayContent && (
         <CardOverlay isVisible={!!selectedDay}>
@@ -278,7 +269,11 @@ const AdventCalendarPage = () => {
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
-            <LinkButton href={selectedDayContent.link} target="_blank" rel="noopener noreferrer">
+            <LinkButton
+              href={selectedDayContent.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Access Content
             </LinkButton>
           </Card>

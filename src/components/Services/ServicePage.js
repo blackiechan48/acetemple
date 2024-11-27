@@ -19,35 +19,35 @@ const ServiceContainer = styled.div`
   }
 `;
 
-const VideoBox = styled.div`
-  width: 100%;
-  padding: 20px;
-  margin-bottom: 20px;
-  text-align: center;
+// const VideoBox = styled.div`
+//   width: 100%;
+//   padding: 20px;
+//   margin-bottom: 20px;
+//   text-align: center;
 
-  @media (max-width: 768px) {
-    padding: 15px;
-  }
+//   @media (max-width: 768px) {
+//     padding: 15px;
+//   }
 
-  @media (max-width: 600px) {
-    width: 95%;
-    padding: 10px;
-  }
-`;
+//   @media (max-width: 600px) {
+//     width: 95%;
+//     padding: 10px;
+//   }
+// `;
 
-const VideoEmbed = styled.iframe`
-  width: 95%;
-  height: 400px;
-  border-radius: 6px;
+// const VideoEmbed = styled.iframe`
+//   width: 95%;
+//   height: 400px;
+//   border-radius: 6px;
 
-  @media (max-width: 768px) {
-    height: 300px;
-  }
+//   @media (max-width: 768px) {
+//     height: 300px;
+//   }
 
-  @media (max-width: 600px) {
-    height: 200px;
-  }
-`;
+//   @media (max-width: 600px) {
+//     height: 200px;
+//   }
+// `;
 
 const ServiceOption = styled.div`
   background-color: #f9f9f9;
@@ -132,14 +132,14 @@ const LearnMoreButton = styled(Link)`
 const Services = () => {
   return (
     <>
-      <VideoBox>
+      {/* <VideoBox>
         <VideoEmbed
           src="https://www.youtube.com/embed/your-video-id"
           frameBorder="0"
           allowFullScreen
           title="Service Introduction Video"
         />
-      </VideoBox>
+      </VideoBox> */}
       <ServiceContainer>
         <ServiceOption>
           <Title>Personal Training</Title>
