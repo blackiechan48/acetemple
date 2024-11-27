@@ -115,7 +115,7 @@ const FeatureBoxes = () => {
           <h3>Online Coaching</h3>
           <p>Access coaching sessions from the comfort of your home.</p>
           <p>Achieve incredible results from anywhere with a personalized plan and accountability.</p>
-          <a href="/OnlineCoaching">Find Out More</a>
+          <a href="/online-coaching">Find Out More</a>
         </FeatureBox>
         <FeatureBox>
           <img src="/images/acebody.png" alt="Challenges" />
@@ -123,7 +123,7 @@ const FeatureBoxes = () => {
           <p>Join our fitness challenges and push your limits.</p>
           <p>Work alongside like-minded individuals in a supportive community to reach your fitness goals.</p>
           {/* <a href="/8weekschallenge">Find Out More</a> */}
-          <a href="/ChallengeClosed">Find Out More</a>
+          <a href="/challenge-closed">Find Out More</a>
         </FeatureBox>
       </FeatureBoxesContainer>
     </>

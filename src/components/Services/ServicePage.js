@@ -156,7 +156,7 @@ const Services = () => {
             Access coaching sessions from the comfort of your home. Achieve incredible results from anywhere in the
             world with a results-driven approach.
           </Description>
-          <LearnMoreButton to="/OnlineCoaching">Learn More</LearnMoreButton>
+          <LearnMoreButton to="/online-coaching">Learn More</LearnMoreButton>
         </ServiceOption>
       </ServiceContainer>
     </>
