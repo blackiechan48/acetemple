@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import ReactGA from 'react-ga4';
+import { initializeGoogleAnalytics, trackPageView } from './Analytics/googleAnalytics';
+import { initializeFacebookPixel } from './Analytics/facebookPixels';
+import ReactPixel from 'react-facebook-pixel'; // Import ReactPixel for Pixel pageView tracking
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage/HomePage';
@@ -15,13 +17,20 @@ import PrivacyPolicy from './components/Legal/PrivacyPolicy';
 import TermsAndConditions from './components/Legal/TermsAndConditions';
 import ScrollToTopArrow from './components/HomePage/ScrollToTopArrow';
 
-ReactGA.initialize('G-LXC8PNRGF7'); 
+// Initialize Google Analytics and Facebook Pixel
+initializeGoogleAnalytics('G-LXC8PNRGF7'); // Replace with your Google Analytics Measurement ID
+initializeFacebookPixel('354506591072910'); // Replace with your Facebook Pixel ID
 
 const Analytics = () => {
   const location = useLocation();
 
   useEffect(() => {
-    ReactGA.send({ hitType: 'pageview', page: location.pathname });
+    // Track page views for Google Analytics
+    trackPageView(location.pathname);
+
+    // Track page views for Facebook Pixel
+    ReactPixel.pageView();
+    console.log(`Tracked Facebook Pixel and GA Pageview for: ${location.pathname}`);
   }, [location]);
 
   return null;
@@ -51,6 +60,7 @@ const App = () => {
 };
 
 export default App;
+
 
 // // ** remove this to make website live again **
 
