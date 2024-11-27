@@ -96,10 +96,10 @@ const Header = () => {
       </BurgerIcon>
       <Nav isOpen={isOpen}>
         <NavLink href="/">Home</NavLink>
-        <NavLink href="/AboutPage">About</NavLink>
+        <NavLink href="/About">About</NavLink>
         <NavLink href="/testimonials">Testimonials</NavLink>
         <NavLink href="/services">Services</NavLink>
-        <NavLink href="/ChallengeClosed">BodyTransformation</NavLink>
+        <NavLink href="/challenge-closed">BodyTransformation</NavLink>
         {/* <NavLink href="/8weekschallenge">8 Weeks Challenge</NavLink> */}
         <NavLink href="/advent-calendar">Advent calendar</NavLink>
       </Nav>

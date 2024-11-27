@@ -56,34 +56,6 @@ const Image = styled.img`
   }
 `;
 
-// const GalleryContainer = styled.div`
-// display: grid;
-//   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjusts the number of images per row based on screen size */
-//   gap: 10px;
-//   margin-bottom: 30px; /* Adds spacing below the gallery to act as a line break */
-//   cursor: pointer;
-
-//   @media (max-width: 768px) {
-//     grid-template-columns: repeat(2, 1fr); /* Two images per row on smaller screens */
-//     gap: 5px;
-//   }
-// `;
-
-// const GalleryImage = styled.img`
-//   width: calc(80% - 5px);
-//   height: auto;
-//   max-width: 100%;
-//   transition: transform 0.3s ease;
-
-//   &:hover {
-//     transform: scale(1.05);
-//   }
-
-//   /* Mobile-friendly: Stack images in a single column */
-//   @media (max-width: 768px) {
-//     width: 100%;
-//   }
-// `;
 
 const YellowBox = styled.div`
   display: flex;
@@ -143,15 +115,7 @@ const AboutPage = () => {
         <Image src="images/lden hour.png" alt="Your Image" />
       </Section>
 
-      {/* Gallery Section
-      <GalleryContainer>
-        <GalleryImage src="/images/football.png" alt="in a football kit" />
-        <GalleryImage src="/images/topless1.jpg" alt="Image 2" />
-        <GalleryImage src="/images/ballslam.png" alt="Image 3" />
-        <GalleryImage src="/images/withosiah.png" alt="Image 4" />
-      </GalleryContainer> */}
-
-      {/* Section 4 */}
+    
       <Section>
         <TextBox>
           <h1>What I Do</h1>
