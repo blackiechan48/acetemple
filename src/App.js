@@ -18,8 +18,8 @@ import TermsAndConditions from './components/Legal/TermsAndConditions';
 import ScrollToTopArrow from './components/HomePage/ScrollToTopArrow';
 
 // Initialize Google Analytics and Facebook Pixel
-initializeGoogleAnalytics('G-LXC8PNRGF7'); // Replace with your Google Analytics Measurement ID
-initializeFacebookPixel('354506591072910'); // Replace with your Facebook Pixel ID
+initializeGoogleAnalytics('G-LXC8PNRGF7'); 
+initializeFacebookPixel('354506591072910'); 
 
 const Analytics = () => {
   const location = useLocation();

@@ -7,5 +7,10 @@ export const initializeGoogleAnalytics = (measurementId) => {
 
 export const trackPageView = (page) => {
   ReactGA.send({ hitType: 'pageview', page });
-  console.log(`Tracked Google Analytics pageview: ${page}`);
+  console.log(`Tracked pageview: ${page}`);
+};
+
+export const trackEvent = (category, action, label) => {
+  ReactGA.event({ category, action, label });
+  console.log(`Tracked event: ${category}, ${action}, ${label}`);
 };
