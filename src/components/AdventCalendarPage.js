@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 // Sample content for each day
 const calendarContent = [
   { day: 1, title: "Day 1: Welcome and Thank you!", videoLink: "https://www.youtube.com/embed/Gm3uwL6shYs?si=OVb2HzCrmMYt2k7o" },
-  { day: 2, title: "Day 2: Warm-Up", videoLink: "https://www.youtube.com/embed/4QpZB9gTsgI?si=rUxzabQh_SZvqYU6", link: "/link2" },
+  { day: 2, title: "Day 2: Christmas survival kit", videoLink: "https://www.youtube.com/embed/4QpZB9gTsgI?si=rUxzabQh_SZvqYU6", isMailchimpForm: true },
   { day: 3, title: "Day 3: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 4, title: "Day 4: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 5, title: "Day 5: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
@@ -28,7 +28,7 @@ const calendarContent = [
   { day: 23, title: "Day 23: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 24, title: "Day 24: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
 ];
-// // Fisher-Yates shuffle
+// Fisher-Yates Shuffle
 const shuffleArray = (array) => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -45,7 +45,7 @@ const Container = styled.div`
   align-items: center;
   padding: 20px;
   background: #f2f2f2;
-  background-image: url('/advent/christmasbg.gif');
+  background-image: url("/advent/christmasbg.gif");
 `;
 
 const Title = styled.h1`
@@ -53,34 +53,6 @@ const Title = styled.h1`
   color: white;
   text-align: center;
   margin-bottom: 20px;
-`;
-
-const Description = styled.div`
-  text-align: center;
-  color: white;
-  margin-bottom: 20px;
-  padding: 0 20px;
-  font-size: 1.2rem;
-  line-height: .9;
-`;
-
-const ArrowContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-`;
-
-const SnowflakeAnimation = keyframes`
-  0% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
-  100% { transform: translateY(0); }
-`;
-
-const Snowflake = styled.div`
-  font-size: 2em;
-  color: #ffcccc;
-  animation: ${SnowflakeAnimation} 1.5s ease-in-out infinite;
-  margin: 0 5px;
 `;
 
 const CalendarContainer = styled.div`
@@ -92,7 +64,7 @@ const CalendarContainer = styled.div`
 `;
 
 const CalendarDoor = styled.div`
-  background: ${({ isOpen }) => (isOpen ? '#ffd700' : '#8b0000')};
+  background: ${({ isOpen }) => (isOpen ? "#ffd700" : "#8b0000")};
   color: #fff;
   font-size: 1.2em;
   display: flex;
@@ -100,13 +72,13 @@ const CalendarDoor = styled.div`
   justify-content: center;
   height: 80px;
   border-radius: 8px;
-  cursor: ${({ isUnlocked }) => (isUnlocked ? 'pointer' : 'default')};
+  cursor: ${({ isUnlocked }) => (isUnlocked ? "pointer" : "default")};
   opacity: ${({ isUnlocked }) => (isUnlocked ? 1 : 0.5)};
   transition: background 0.3s ease;
 `;
 
 const CardOverlay = styled.div`
-  display: ${({ isVisible }) => (isVisible ? 'flex' : 'none')};
+  display: ${({ isVisible }) => (isVisible ? "flex" : "none")};
   position: fixed;
   top: 0;
   left: 0;
@@ -128,23 +100,7 @@ const Card = styled.div`
   text-align: center;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   position: relative;
-  font-family: 'Merriweather', serif;
-  background-image: url('/advent/christmas.png');
-  background-repeat: no-repeat;
-  background-position: top center;
-  border: 4px solid #ff0000;
-`;
-
-const CloseButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #8b0000;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
+  font-family: "Merriweather", serif;
 `;
 
 const VideoFrame = styled.iframe`
@@ -154,21 +110,12 @@ const VideoFrame = styled.iframe`
   margin-top: 10px;
 `;
 
-const LinkButton = styled.a`
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 15px;
-  background: #ff0000;
-  color: #ffffff;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-`;
-
+// Main Component
 const AdventCalendarPage = () => {
   const [openDoors, setOpenDoors] = useState({});
   const [selectedDay, setSelectedDay] = useState(null);
   const [shuffledDays, setShuffledDays] = useState([]);
+  const [debugMode, setDebugMode] = useState(false); // Debug Mode for testing
 
   // Shuffle days on initial load
   useEffect(() => {
@@ -188,7 +135,7 @@ const AdventCalendarPage = () => {
 
   const handleDoorClick = (day) => {
     const today = new Date();
-    if (today.getMonth() === 11 && day <= today.getDate()) { // Ensure it's December
+    if (debugMode || (today.getMonth() === 11 && day <= today.getDate())) {
       setSelectedDay(day);
       setOpenDoors((prev) => ({ ...prev, [day]: true }));
     } else {
@@ -204,73 +151,74 @@ const AdventCalendarPage = () => {
     ? calendarContent.find((dayContent) => dayContent.day === selectedDay) || {
         title: "Content Not Found",
         videoLink: "",
-        link: null,
       }
     : null;
 
   return (
     <Container>
       <Title>🎄 Welcome to the Fitmas Countdown! 🎅💪</Title>
-      <Description>
-        
-        Each day, a new surprise awaits behind the door:
-        <ul>
-          <li>✨ Quick workouts to fit into your busy schedule</li>
-          <li>✨ Wellness tips to reduce holiday stress</li>
-          <li>✨ Healthy, festive recipes to enjoy guilt-free</li>
-          <li>✨ Fun challenges to keep you motivated</li>
-          <li>✨ And a few surprises to make it extra special!</li>
-        </ul>
-        Let’s make this season strong, joyful, and full of progress—together.
-      </Description>
+      <button onClick={() => setDebugMode(!debugMode)}>
+        {debugMode ? "Disable Debug Mode" : "Enable Debug Mode"}
+      </button>
+      <CalendarContainer>
+        {shuffledDays.map((content, index) => {
+          const day = content.day;
+          const today = new Date();
+          const isUnlocked = debugMode || (today.getMonth() === 11 && day <= today.getDate());
+          const isOpen = openDoors[day];
 
-      <>
-        <ArrowContainer>
-          <Snowflake>❄️</Snowflake>
-          <Snowflake>❄️</Snowflake>
-        </ArrowContainer>
-        <CalendarContainer>
-          {shuffledDays.map((content, index) => {
-            const day = content.day;
-            const today = new Date();
-            const isUnlocked =
-              today.getMonth() === 11 && day <= today.getDate(); // Unlock only for days in December
-            const isOpen = openDoors[day];
-
-            return (
-              <CalendarDoor
-                key={index}
-                isOpen={isOpen}
-                isUnlocked={isUnlocked}
-                onClick={isUnlocked ? () => handleDoorClick(day) : null} // Prevent clicking on locked doors
-              >
-                {day} {/* Always display the day number */}
-              </CalendarDoor>
-            );
-          })}
-        </CalendarContainer>
-      </>
+          return (
+            <CalendarDoor
+              key={index}
+              isOpen={isOpen}
+              isUnlocked={isUnlocked}
+              onClick={isUnlocked ? () => handleDoorClick(day) : null}
+            >
+              {day}
+            </CalendarDoor>
+          );
+        })}
+      </CalendarContainer>
 
       {selectedDayContent && (
         <CardOverlay isVisible={!!selectedDay}>
           <Card>
-            <CloseButton onClick={handleCloseCard}>✖</CloseButton>
+            <button onClick={handleCloseCard}>✖ Close</button>
             <h2>{selectedDayContent.title}</h2>
             <VideoFrame
               src={selectedDayContent.videoLink}
               title={`Video for Day ${selectedDay}`}
-              aria-label={`Video for Day ${selectedDay}`}
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allow="autoplay; encrypted-media; picture-in-picture"
               allowFullScreen
             />
-            {selectedDayContent.link && (
-              <LinkButton
-                href={selectedDayContent.link}
+            {selectedDayContent.isMailchimpForm && (
+              <form
+                action="https://acetemple.us16.list-manage.com/subscribe/post?u=9a2533ed7418a68b40bc24d2f&amp;id=f5240a6b61&amp;f_id=002b19e0f0"
+                method="post"
                 target="_blank"
-                rel="noopener noreferrer"
               >
-                Click here
-              </LinkButton>
+                <div>
+                  <label htmlFor="email">Email Address:</label>
+                  <input
+                    type="email"
+                    name="EMAIL"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="name">First Name:</label>
+                  <input
+                    type="text"
+                    name="FNAME"
+                    id="name"
+                    placeholder="Enter your first name"
+                    required
+                  />
+                </div>
+                <button type="submit">Download Now</button>
+              </form>
             )}
           </Card>
         </CardOverlay>
