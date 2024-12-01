@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 // Sample content for each day
 const calendarContent = [
-  { day: 1, title: "Day 1: Xmas Survival Guide!", videoLink: "https://www.youtube.com/embed/video1", link: "/link1" },
+  { day: 1, title: "Day 1: Welcome and Thank you!", videoLink: "https://www.youtube.com/embed/hAfdRrwD7lY?si=m9zPO3ST91KWfn0m" },
   { day: 2, title: "Day 2: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 3, title: "Day 3: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 4, title: "Day 4: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
@@ -28,9 +28,17 @@ const calendarContent = [
   { day: 23, title: "Day 23: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 24, title: "Day 24: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
 ];
+// // Fisher-Yates shuffle
+const shuffleArray = (array) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
 
 // Styled Components
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -42,9 +50,18 @@ const Container = styled.div`
 
 const Title = styled.h1`
   font-size: 2em;
-  color: #8b0000;
+  color: white;
   text-align: center;
   margin-bottom: 20px;
+`;
+
+const Description = styled.div`
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  font-size: 1.2rem;
+  line-height: .9;
 `;
 
 const ArrowContainer = styled.div`
@@ -151,6 +168,12 @@ const LinkButton = styled.a`
 const AdventCalendarPage = () => {
   const [openDoors, setOpenDoors] = useState({});
   const [selectedDay, setSelectedDay] = useState(null);
+  const [shuffledDays, setShuffledDays] = useState([]);
+
+  // Shuffle days on initial load
+  useEffect(() => {
+    setShuffledDays(shuffleArray(calendarContent));
+  }, []);
 
   // Load opened doors from local storage
   useEffect(() => {
@@ -181,13 +204,25 @@ const AdventCalendarPage = () => {
     ? calendarContent.find((dayContent) => dayContent.day === selectedDay) || {
         title: "Content Not Found",
         videoLink: "",
-        link: "#",
+        link: null,
       }
     : null;
 
   return (
     <Container>
-      <Title>Digital Fitness Advent Calendar</Title>
+      <Title>🎄 Welcome to the Fitmas Countdown! 🎅💪</Title>
+      <Description>
+        
+        Each day, a new surprise awaits behind the door:
+        <ul>
+          <li>✨ Quick workouts to fit into your busy schedule</li>
+          <li>✨ Wellness tips to reduce holiday stress</li>
+          <li>✨ Healthy, festive recipes to enjoy guilt-free</li>
+          <li>✨ Fun challenges to keep you motivated</li>
+          <li>✨ And a few surprises to make it extra special!</li>
+        </ul>
+        Let’s make this season strong, joyful, and full of progress—together.
+      </Description>
 
       <>
         <ArrowContainer>
@@ -195,8 +230,8 @@ const AdventCalendarPage = () => {
           <Snowflake>❄️</Snowflake>
         </ArrowContainer>
         <CalendarContainer>
-          {Array.from({ length: 24 }, (_, index) => {
-            const day = index + 1;
+          {shuffledDays.map((content, index) => {
+            const day = content.day;
             const today = new Date();
             const isUnlocked =
               today.getMonth() === 11 && day <= today.getDate(); // Unlock only for days in December
@@ -204,7 +239,7 @@ const AdventCalendarPage = () => {
 
             return (
               <CalendarDoor
-                key={day}
+                key={index}
                 isOpen={isOpen}
                 isUnlocked={isUnlocked}
                 onClick={isUnlocked ? () => handleDoorClick(day) : null} // Prevent clicking on locked doors
@@ -228,13 +263,15 @@ const AdventCalendarPage = () => {
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
-            <LinkButton
-              href={selectedDayContent.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Access Content
-            </LinkButton>
+            {selectedDayContent.link && (
+              <LinkButton
+                href={selectedDayContent.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Click here
+              </LinkButton>
+            )}
           </Card>
         </CardOverlay>
       )}
