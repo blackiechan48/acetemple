@@ -110,6 +110,19 @@ const VideoFrame = styled.iframe`
   margin-top: 10px;
 `;
 
+const DebugButton = styled.button`
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: #c9302c;
+  }
+`;
+
 // Main Component
 const AdventCalendarPage = () => {
   const [openDoors, setOpenDoors] = useState({});
@@ -157,9 +170,14 @@ const AdventCalendarPage = () => {
   return (
     <Container>
       <Title>🎄 Welcome to the Fitmas Countdown! 🎅💪</Title>
-      <button onClick={() => setDebugMode(!debugMode)}>
-        {debugMode ? "Disable Debug Mode" : "Enable Debug Mode"}
-      </button>
+
+      {/* Show Debug Button only in non-production environments */}
+      {process.env.NODE_ENV !== "production" && (
+        <DebugButton onClick={() => setDebugMode(!debugMode)}>
+          {debugMode ? "Disable Debug Mode" : "Enable Debug Mode"}
+        </DebugButton>
+      )}
+
       <CalendarContainer>
         {shuffledDays.map((content, index) => {
           const day = content.day;
