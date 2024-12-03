@@ -6,7 +6,8 @@ const calendarContent = [
   { day: 1, title: "Day 1: Welcome and Thank you!", videoLink: "https://www.youtube.com/embed/Gm3uwL6shYs?si=OVb2HzCrmMYt2k7o" },
   { day: 2, title: "Day 2: Christmas survival kit", videoLink: "https://www.youtube.com/embed/4QpZB9gTsgI?si=rUxzabQh_SZvqYU6", isMailchimpForm: true },
   { day: 3, title: "Day 3: Take care of it ", videoLink: "https://www.youtube.com/embed/7EAz4bba3VA?si=TiJWaAyhGXqTCYK3", link: "" },
-  { day: 4, title: "Day 4: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
+  { day: 4, title: "Day 4: 12 days of christmas", videoLink: "https://www.youtube.com/embed/LZBXc_Th-ts?si=y6Ou1SgSGYXCj1aj", link: "https://drive.google.com/file/d/1AyTJxhNcuR1U1QZNyI_xFv1Z7voGqSXA/view?usp=sharing" },
+
   { day: 5, title: "Day 5: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 6, title: "Day 6: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 7, title: "Day 7: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
@@ -130,18 +131,15 @@ const AdventCalendarPage = () => {
   const [shuffledDays, setShuffledDays] = useState([]);
   const [debugMode, setDebugMode] = useState(false); // Debug Mode for testing
 
-  // Shuffle days on initial load
   useEffect(() => {
     setShuffledDays(shuffleArray(calendarContent));
   }, []);
 
-  // Load opened doors from local storage
   useEffect(() => {
     const savedOpenDoors = JSON.parse(localStorage.getItem("openDoors")) || {};
     setOpenDoors(savedOpenDoors);
   }, []);
 
-  // Save opened doors to local storage whenever they change
   useEffect(() => {
     localStorage.setItem("openDoors", JSON.stringify(openDoors));
   }, [openDoors]);
@@ -170,8 +168,6 @@ const AdventCalendarPage = () => {
   return (
     <Container>
       <Title>🎄 Welcome to the Fitmas Countdown! 🎅💪</Title>
-
-      {/* Show Debug Button only in non-production environments */}
       {process.env.NODE_ENV !== "production" && (
         <DebugButton onClick={() => setDebugMode(!debugMode)}>
           {debugMode ? "Disable Debug Mode" : "Enable Debug Mode"}
@@ -209,34 +205,24 @@ const AdventCalendarPage = () => {
               allow="autoplay; encrypted-media; picture-in-picture"
               allowFullScreen
             />
-            {selectedDayContent.isMailchimpForm && (
-              <form
-                action="https://acetemple.us16.list-manage.com/subscribe/post?u=9a2533ed7418a68b40bc24d2f&amp;id=f5240a6b61&amp;f_id=002b19e0f0"
-                method="post"
+            {selectedDayContent.link && (
+              <a
+                href={selectedDayContent.link}
                 target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  marginTop: "10px",
+                  display: "inline-block",
+                  padding: "10px 15px",
+                  backgroundColor: "#ff0000",
+                  color: "#fff",
+                  textDecoration: "none",
+                  borderRadius: "5px",
+                  fontWeight: "bold",
+                }}
               >
-                <div>
-                  <label htmlFor="email">Email Address:</label>
-                  <input
-                    type="email"
-                    name="EMAIL"
-                    id="email"
-                    placeholder="Enter your email"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="name">First Name:</label>
-                  <input
-                    type="text"
-                    name="FNAME"
-                    id="name"
-                    placeholder="Enter your first name"
-                    required
-                  />
-                </div>
-                <button type="submit">Download Now</button>
-              </form>
+                View PDF
+              </a>
             )}
           </Card>
         </CardOverlay>

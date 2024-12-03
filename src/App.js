@@ -16,6 +16,7 @@ import AdventCalendarPage from './components/AdventCalendarPage';
 import PrivacyPolicy from './components/Legal/PrivacyPolicy';
 import TermsAndConditions from './components/Legal/TermsAndConditions';
 import ScrollToTopArrow from './components/HomePage/ScrollToTopArrow';
+import NotFoundPage from './NotFoundPage';
 
 // Initialize Google Analytics and Facebook Pixel
 initializeGoogleAnalytics('G-LXC8PNRGF7'); 
@@ -52,6 +53,7 @@ const App = () => {
         <Route path="/advent-calendar" element={<AdventCalendarPage />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsAndConditions />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <ScrollToTopArrow />
       <Footer />
