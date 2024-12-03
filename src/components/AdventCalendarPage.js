@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const calendarContent = [
   { day: 1, title: "Day 1: Welcome and Thank you!", videoLink: "https://www.youtube.com/embed/Gm3uwL6shYs?si=OVb2HzCrmMYt2k7o" },
   { day: 2, title: "Day 2: Christmas survival kit", videoLink: "https://www.youtube.com/embed/4QpZB9gTsgI?si=rUxzabQh_SZvqYU6", isMailchimpForm: true },
-  { day: 3, title: "Day 3: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
+  // { day: 3, title: "Day 3: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 4, title: "Day 4: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 5, title: "Day 5: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 6, title: "Day 6: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
