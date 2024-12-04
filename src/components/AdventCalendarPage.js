@@ -6,7 +6,7 @@ const calendarContent = [
   { day: 1, title: "Day 1: Welcome and Thank you!", videoLink: "https://www.youtube.com/embed/Gm3uwL6shYs?si=OVb2HzCrmMYt2k7o" },
   { day: 2, title: "Day 2: Christmas survival kit", videoLink: "https://www.youtube.com/embed/4QpZB9gTsgI?si=rUxzabQh_SZvqYU6", isMailchimpForm: true },
   { day: 3, title: "Day 3: Take care of it ", videoLink: "https://www.youtube.com/embed/7EAz4bba3VA?si=TiJWaAyhGXqTCYK3", link: "" },
-  { day: 4, title: "Day 4: 12 days of christmas", videoLink: "https://www.youtube.com/embed/LZBXc_Th-ts?si=y6Ou1SgSGYXCj1aj", link: "https://drive.google.com/file/d/1AyTJxhNcuR1U1QZNyI_xFv1Z7voGqSXA/view?usp=sharing" },
+  { day: 4, title: "Day 4: 12 days of christmas", videoLink: "https://www.youtube.com/embed/LZBXc_Th-ts?si=y6Ou1SgSGYXCj1aj", link: "https://drive.google.com/file/d/1lAWpZpDomYVkE69uW_4lOcZ4gJ8y3hi_/view?usp=sharing" },
 
   { day: 5, title: "Day 5: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 6, title: "Day 6: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
