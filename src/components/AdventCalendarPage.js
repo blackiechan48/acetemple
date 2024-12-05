@@ -8,7 +8,7 @@ const calendarContent = [
   { day: 3, title: "Day 3: Take care of it ", videoLink: "https://www.youtube.com/embed/7EAz4bba3VA?si=TiJWaAyhGXqTCYK3", link: "" },
   { day: 4, title: "Day 4: 12 days of christmas", videoLink: "https://www.youtube.com/embed/LZBXc_Th-ts?si=y6Ou1SgSGYXCj1aj", link: "https://drive.google.com/file/d/1lAWpZpDomYVkE69uW_4lOcZ4gJ8y3hi_/view?usp=sharing" },
   { day: 5, title: "Day 5: Christmas Recipe", videoLink: "https://www.youtube.com/embed/vN7NLBHuRbs?si=JMjZH91wuooLb3De", link: "https://drive.google.com/file/d/1Wh6vWzyf4GjNNsWRrfpmzZakmNaocjGX/view?usp=sharing" },
-  { day: 6, title: "Day 6: Warm-Up", videoLink: "https://www.youtube.com/embed/tqm1QsQxGYw?si=JMBBagCKTpF5Subq", link: "https://drive.google.com/file/d/1gAyBWH4GDcdsJKY0FNtDzHPK3qvEZ3O9/view?usp=sharing" },
+  { day: 6, title: "Day 6: Stay active", videoLink: "https://www.youtube.com/embed/tqm1QsQxGYw?si=JMBBagCKTpF5Subq", link: "https://drive.google.com/file/d/1gAyBWH4GDcdsJKY0FNtDzHPK3qvEZ3O9/view?usp=sharing" },
   { day: 7, title: "Day 7: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 8, title: "Day 8: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 9, title: "Day 9: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
