@@ -9,8 +9,8 @@ const calendarContent = [
   { day: 4, title: "Day 4: 12 days of christmas", videoLink: "https://www.youtube.com/embed/LZBXc_Th-ts?si=y6Ou1SgSGYXCj1aj", link: "https://drive.google.com/file/d/1lAWpZpDomYVkE69uW_4lOcZ4gJ8y3hi_/view?usp=sharing" },
   { day: 5, title: "Day 5: Christmas Recipe", videoLink: "https://www.youtube.com/embed/vN7NLBHuRbs?si=JMjZH91wuooLb3De", link: "https://drive.google.com/file/d/1Wh6vWzyf4GjNNsWRrfpmzZakmNaocjGX/view?usp=sharing" },
   { day: 6, title: "Day 6: Stay active", videoLink: "https://www.youtube.com/embed/tqm1QsQxGYw?si=JMBBagCKTpF5Subq", link: "https://drive.google.com/file/d/1gAyBWH4GDcdsJKY0FNtDzHPK3qvEZ3O9/view?usp=sharing" },
-  { day: 7, title: "Day 7: Warm-Up", videoLink: "https://www.youtube.com/embed/9gZXrbCutWw?si=TNqXjAHIWDMLOOm5", link: "/link2" },
-  { day: 8, title: "Day 8: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
+  { day: 7, title: "Day 7: No bad workout", videoLink: "https://www.youtube.com/embed/9gZXrbCutWw?si=TNqXjAHIWDMLOOm5", link: "" },
+  { day: 8, title: "Day 8: Lets get personal", videoLink: "https://www.youtube.com/embed/tqjs_f3P610?si=zBzjdE9zmxmbkm1E", link: "mailto:support@acetemple.com" },
   { day: 9, title: "Day 9: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 10, title: "Day 10: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 11, title: "Day 11: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
@@ -128,7 +128,7 @@ const AdventCalendarPage = () => {
   const [openDoors, setOpenDoors] = useState({});
   const [selectedDay, setSelectedDay] = useState(null);
   const [shuffledDays, setShuffledDays] = useState([]);
-  const [debugMode, setDebugMode] = useState(false); // Debug Mode for testing
+  const [debugMode, setDebugMode] = useState(false);
 
   useEffect(() => {
     setShuffledDays(shuffleArray(calendarContent));
@@ -220,7 +220,7 @@ const AdventCalendarPage = () => {
                   fontWeight: "bold",
                 }}
               >
-                View PDF
+                {selectedDayContent.day === 8 ? "Get in Touch" : "View PDF"}
               </a>
             )}
           </Card>
