@@ -12,7 +12,7 @@ const calendarContent = [
   { day: 7, title: "Day 7: No bad workout", videoLink: "https://www.youtube.com/embed/9gZXrbCutWw?si=TNqXjAHIWDMLOOm5", link: "" },
   { day: 8, title: "Day 8: Lets get personal", videoLink: "https://www.youtube.com/embed/tqjs_f3P610?si=zBzjdE9zmxmbkm1E", link: "mailto:support@acetemple.com" },
   { day: 9, title: "Day 9: Tis a Challenge", videoLink: "https://www.youtube.com/embed/ShwXCK94290?si=K_E-WR7SPWaPqdJE", link: "" },
-  { day: 10, title: "Day 10: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
+  { day: 10, title: "Day 10: Productivity Hack", videoLink: "https://www.youtube.com/embed/Pi1hve7hokI?si=-ESj7GFLLAyE3xFR", link: "" },
   { day: 11, title: "Day 11: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 12, title: "Day 12: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 13, title: "Day 13: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
