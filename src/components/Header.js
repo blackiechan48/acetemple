@@ -102,6 +102,7 @@ const Header = () => {
         <NavLink href="/challenge-closed">BodyTransformation</NavLink>
         {/* <NavLink href="/8weekschallenge">8 Weeks Challenge</NavLink> */}
         <NavLink href="/advent-calendar">Advent calendar</NavLink>
+        <NavLink href="/landing">Landing Page</NavLink>
       </Nav>
     </HeaderContainer>
   );
