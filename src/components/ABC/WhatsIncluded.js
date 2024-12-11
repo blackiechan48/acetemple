@@ -10,15 +10,23 @@ const SectionContainer = styled.div`
 
 const SectionTitle = styled.h2`
   color: #222831; /* Black */
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem; /* Adjust for smaller screens */
+  }
 `;
 
 const FeaturesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 20px;
+
+  @media (max-width: 480px) {
+    gap: 15px; /* Smaller gap for very small screens */
+  }
 `;
 
 const FeatureBox = styled.div`
@@ -27,18 +35,30 @@ const FeatureBox = styled.div`
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   text-align: left;
+
+  @media (max-width: 480px) {
+    padding: 15px; /* Adjust padding for mobile */
+  }
 `;
 
 const FeatureTitle = styled.h3`
   color: #f05454; /* Red */
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem; /* Adjust for smaller screens */
+  }
 `;
 
 const FeatureText = styled.p`
   color: #222831; /* Black */
   line-height: 1.6;
   font-size: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem; /* Adjust for smaller screens */
+  }
 `;
 
 const WhatsIncluded = () => {
