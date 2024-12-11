@@ -18,6 +18,7 @@ import PrivacyPolicy from './components/Legal/PrivacyPolicy';
 import TermsAndConditions from './components/Legal/TermsAndConditions';
 import ScrollToTopArrow from './components/HomePage/ScrollToTopArrow';
 import NotFoundPage from './NotFoundPage';
+import Abc from './components/ABC/Abc';
 
 
 // Initialize Google Analytics and Facebook Pixel
@@ -57,6 +58,7 @@ const App = () => {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/abc" element={<Abc/>} />
       </Routes>
       <ScrollToTopArrow />
       <Footer />
