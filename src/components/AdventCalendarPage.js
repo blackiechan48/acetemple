@@ -16,7 +16,7 @@ const calendarContent = [
   { day: 11, title: "Day 11: Clients Testimonial ", videoLink: "https://www.youtube.com/embed/2dRgbOOOSGQ?si=_NdplyMrYQ5OhuBz", link: "" },
   { day: 12, title: "Day 12: Post Feast Digestion ", videoLink: "https://www.youtube.com/embed/-SX75X9z2rw?si=akhUi8GfPZYFMWHC", link: "" },
   { day: 13, title: "Day 13: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
-  { day: 14, title: "Day 14: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
+  { day: 14, title: "Day 14: Progress Tracker", videoLink: "https://www.youtube.com/embed/hx7vOJ2w-_M?si=KO9AO1ly8y1rqrAd", link: "https://drive.google.com/file/d/1FZnUFQJbNtAFVgeuKPE1G_WACgz4EEGc/view?usp=sharing" },
   { day: 15, title: "Day 15: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 16, title: "Day 16: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 17, title: "Day 17: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
