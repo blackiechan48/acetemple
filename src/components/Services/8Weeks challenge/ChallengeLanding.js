@@ -11,6 +11,30 @@ const PageContainer = styled.div`
   min-height: 100vh;
 `;
 
+const VisualElement = styled.div`
+  margin: 20px auto;
+  max-width: 300px;
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+`;
+
+const Testimonial = styled.p`
+  font-style: italic;
+  font-size: 1rem;
+  color: #555555;
+  margin: 20px auto;
+  max-width: 600px;
+
+  span {
+    font-weight: bold;
+    color: #f05454; /* Red */
+  }
+`;
+
 const FormContainer = styled.div`
   background: #ffffff;
   color: #222831;
@@ -41,7 +65,7 @@ const Subheadline = styled.h2`
 const Timer = styled.p`
   font-size: 1rem;
   font-weight: bold;
-  color: #f05454; /* Red */
+  color: #d94343; /* Darker Red */
   margin-bottom: 20px;
 `;
 
@@ -135,12 +159,29 @@ const ChallengeLanding = () => {
       <Subheadline>
         Get expert guidance, personalized plans, and group motivation for FREE!
       </Subheadline>
-      <Timer>Enter before December 24th for your chance to win 1 of 2 FREE spots!</Timer>
+      <Timer>
+        <strong>Enter before December 24th</strong> for your chance to win 1 of
+        2 FREE spots!
+      </Timer>
+
+      <VisualElement>
+        <img
+          src="/IMG_4657.JPG"
+          alt="Before and After Transformation"
+        />
+      </VisualElement>
+
+      <Testimonial>
+        “I lost 12 pounds and finally felt confident in my skin.{" "}
+        <span>This program works!</span>” – Sarah M.
+      </Testimonial>
+
       <BenefitsList>
         <li>Personalized workout and nutrition plans.</li>
         <li>Expert coaching and accountability.</li>
         <li>Chance to transform your body in 8 weeks.</li>
       </BenefitsList>
+
       <FormContainer>
         <form
           action="https://acetemple.us16.list-manage.com/subscribe/post?u=9a2533ed7418a68b40bc24d2f&amp;id=befc2df0ec&amp;f_id=000a19e0f0"
@@ -179,11 +220,12 @@ const ChallengeLanding = () => {
           </SubmitButton>
         </form>
         <Disclaimer>
-          By signing up, you agree to receive emails about the ACE Body Challenge. You can unsubscribe
-          anytime.
+          By signing up, you agree to receive emails about the ACE Body
+          Challenge. You can unsubscribe anytime.
         </Disclaimer>
         <TrustBadge>
-          <span>100% Privacy Guaranteed:</span> Your information is safe with us—we’ll never spam you.
+          <span>100% Privacy Guaranteed:</span> Your information is safe with
+          us—we’ll never spam you.
         </TrustBadge>
       </FormContainer>
     </PageContainer>
