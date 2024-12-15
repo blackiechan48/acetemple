@@ -10,6 +10,7 @@ import AboutPage from './components/AboutPage';
 import ServicesPage from './components/Services/ServicePage';
 import Testimonials from './components/Testimonials';
 import PTPage from './components/Services/PTPage';
+import ChallengeLanding from './components/Services/8Weeks challenge/ChallengeLanding'
 import OnlineCoaching from './components/Services/OnlineCoaching';
 import ChallengeClosedPage from './components/Services/8Weeks challenge/ChallengeClosedPage';
 import AdventCalendarPage from './components/AdventCalendarPage';
@@ -52,6 +53,7 @@ const App = () => {
         <Route path="/online-coaching" element={<OnlineCoaching />} />
         <Route path="/challenge-closed" element={<ChallengeClosedPage />} />
         <Route path="/advent-calendar" element={<AdventCalendarPage />} />
+        <Route path="/raffle-page" element={<ChallengeLanding />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="*" element={<NotFoundPage />} />

@@ -17,7 +17,7 @@ const calendarContent = [
   { day: 12, title: "Day 12: Post Feast Digestion ", videoLink: "https://www.youtube.com/embed/-SX75X9z2rw?si=akhUi8GfPZYFMWHC", link: "" },
   { day: 13, title: "Day 13: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 14, title: "Day 14: Progress Tracker", videoLink: "https://www.youtube.com/embed/hx7vOJ2w-_M?si=KO9AO1ly8y1rqrAd", link: "https://drive.google.com/file/d/1FZnUFQJbNtAFVgeuKPE1G_WACgz4EEGc/view?usp=sharing" },
-  { day: 15, title: "Day 15: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
+  { day: 15, title: "Day 15: Let the transformation begin", videoLink: "https://www.youtube.com/embed/l-1gHk8C9IM?si=fzMHYzg-1O1zofKn", link: "/raffle-page" },
   { day: 16, title: "Day 16: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 17, title: "Day 17: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
   { day: 18, title: "Day 18: Warm-Up", videoLink: "https://www.youtube.com/embed/video2", link: "/link2" },
@@ -220,7 +220,11 @@ const AdventCalendarPage = () => {
                   fontWeight: "bold",
                 }}
               >
-                {selectedDayContent.day === 8 ? "Get in Touch" : "View PDF"}
+                {selectedDayContent.day === 8
+                  ? "Get in Touch"
+                  : selectedDayContent.day === 15
+                  ? "Claim Your Transformation"
+                  : "View PDF"}
               </a>
             )}
           </Card>
