@@ -54,7 +54,7 @@ const App = () => {
         <Route path="/online-coaching" element={<OnlineCoaching />} />
         <Route path="/challenge-closed" element={<ChallengeClosedPage />} />
         <Route path="/advent-calendar" element={<AdventCalendarPage />} />
-        <Route path="/raffle-page" element={<ChallengeLanding />} />
+        <Route path="/transformation-start-here" element={<ChallengeLanding />} />
         <Route path="/Youre-in" element={<ChallengeThanks />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsAndConditions />} />
