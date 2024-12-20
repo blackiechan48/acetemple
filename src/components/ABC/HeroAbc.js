@@ -96,7 +96,7 @@ const CTAButton = styled.a`
   }
 `;
 
-c
+
 
 // Component
 const HeroAbc = () => {
