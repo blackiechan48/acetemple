@@ -21,7 +21,7 @@ import NotFoundPage from './NotFoundPage';
 import Abc from './components/ABC/Abc';
 
 
-// Initialize Google Analytics and Facebook Pixel
+// Initialize Google An 3alytics and Facebook Pixel
 initializeGoogleAnalytics('G-LXC8PNRGF7'); 
 initializeFacebookPixel('354506591072910'); 
 
@@ -58,7 +58,7 @@ const App = () => {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="*" element={<NotFoundPage />} />
-        <Route path="/abc" element={<Abc/>} />
+        <Route path="/body-Transformation" element={<Abc/>} />
       </Routes>
       <ScrollToTopArrow />
       <Footer />
