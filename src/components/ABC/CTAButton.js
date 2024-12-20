@@ -6,14 +6,14 @@ const Button = styled.button`
   font-size: 1rem;
   font-weight: bold;
   color: #ffffff;
-  background-color: #f05454;
+  background-color: #F4CE14;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #d94343;
+    background-color: #F4CE14;
   }
 `;
 

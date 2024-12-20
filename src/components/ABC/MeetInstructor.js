@@ -44,14 +44,7 @@ const Image = styled.img`
   }
 `;
 
-const Subtitle = styled.h3`
-  font-size: 1.5rem;
-  margin-bottom: 10px;
 
-  @media (max-width: 768px) {
-    font-size: 1.3rem;
-  }
-`;
 
 const Text = styled.p`
   font-size: 1rem;
@@ -70,20 +63,19 @@ const MeetInstructor = () => {
         <Title>Meet Your Coach: Olu Olayeni</Title>
         <Image src="images/about/91459155_583390222269401_3230648346903157205_n.jpg" alt="Olu Olayeni" />
         <Text>
-          A Birmingham-based personal trainer and proud dad with a passion for
-          helping people transform their lives through fitness. Since 2015, I’ve
-          guided over 100 clients to achieve incredible results and sustain them
-          long-term.
+        A Birmingham-based personal trainer and proud dad, I’ve dedicated my career to 
+        helping people transform their lives through fitness. Since 2015, I’ve guided 
+        over 100 clients to stronger bodies, healthier habits, and lasting confidence.
+
+        </Text>
+        <Text>I know the journey firsthand—whether it’s competing at peak performance 
+          levels or staying active as a ‘trophy husband’ and busy father. My mission: 
+          to help you crush your goals and maintain the results for a lifetime.
+     
         </Text>
         <Text>
-          I’ve experienced the ups and downs of fitness firsthand—from competing
-          at peak performance to staying fit as a ‘trophy husband’ and keeping up
-          with my energetic son. My mission is to help you reach your goals while
-          equipping you with the tools to maintain them for life.
-        </Text>
-        <Text>
-          Whether you’re just starting out or ready to level up, I’m here to guide
-          and support you every step of the way.
+        No matter where you’re starting from, I’m here to guide and support you 
+        every step of the way.
         </Text>
       </ContentWrapper>
     </SectionContainer>

@@ -40,7 +40,7 @@ const CountdownContainer = styled.div`
 const SmallText = styled.p`
   font-size: 1rem;
   font-weight: 400;
-  color: white;
+  color: #F4CE14;
   margin-bottom: 5px;
 
   @media (max-width: 768px) {

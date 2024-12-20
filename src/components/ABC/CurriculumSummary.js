@@ -77,15 +77,15 @@ const CurriculumSummary = () => {
   const [activeWeek, setActiveWeek] = useState(null);
 
   const curriculum = [
-    { week: 1, title: 'Setting the Foundation', description: 'Kick off your journey with personalised goals, a tailored workout plan, and nutrition guides designed just for you.' },
-    { week: 2, title: 'Building Momentum', description: 'Establish consistency with progressive workouts and discover how to make nutrition work for your lifestyle.' },
-    { week: 3, title: 'Strength & Conditioning', description: 'Introduce strength training and conditioning workouts to boost your fitness.' },
-    { week: 4, title: 'Pushing Your Limits', description: 'Challenge yourself with increased intensity to achieve personal bests.' },
-    { week: 5, title: 'Overcoming Plateaus', description: 'Push past limits with new challenges, advanced techniques, and group support to keep progress steady.' },
-    { week: 6, title: 'Refining Your Results', description: 'Learn how to effectively measure and celebrate your progress.' },
-    { week: 7, title: 'Building for the Future', description: 'Learn sustainable habits and routines to maintain your transformation long after the challenge ends.' },
-    { week: 8, title: 'Reflecting & Celebrating', description: 'Reflect on your transformation and celebrate your success.' },
-    { week: 9, title: 'Planning Your Next Steps', description: 'Set your post-challenge goals and create a roadmap to keep progressing with confidence and purpose' },
+    { week: 1, title: 'Setting the Foundation', description: 'Define your goals, establish your starting point, and learn key principles for lasting success.' },
+    { week: 2, title: 'Building Momentum', description: 'Create consistency with progressive workouts and simple, effective nutrition strategies.' },
+    { week: 3, title: 'Strength & Conditioning', description: 'Boost your overall strength, improve endurance, and step up your training intensity.' },
+    { week: 4, title: 'Pushing Your Limits', description: 'Challenge yourself with advanced exercises and refine your form to break through barriers.' },
+    { week: 5, title: 'Overcoming Plateaus', description: 'Implement targeted adjustments to keep making progress, even when results slow down.' },
+    { week: 6, title: 'Refining Your Results', description: 'Fine-tune your workouts, nutrition, and routines to maximize your improvements.' },
+    { week: 7, title: 'Building for the Future', description: 'Develop long-term habits and strategies to ensure your results last well beyond this program.' },
+    { week: 8, title: 'Reflecting & Celebrating', description: 'Assess your achievements, acknowledge your growth, and celebrate how far you’ve come.' },
+    { week: 9, title: 'Planning Your Next Steps', description: 'Set new goals, create a clear action plan, and move forward with confidence and momentum.' },
   ];
 
   const toggleWeek = (week) => {

@@ -10,9 +10,10 @@ const testimonials = [
 const images = [
   '/images/result progress pics/aqib.png',
   '/images/result progress pics/Damaris.png',
-  '/images/result progress pics/sike.png',
+  '/images/Before and afters/Diamanta.jpg',
   '/images/result progress pics/charlot.png',
-  '/images/result progress pics/P.png'
+  '/images/result progress pics/P.png',
+  '/images/Before and afters/sherene.jpg',
 ];
 
 // Keyframe animations
@@ -32,15 +33,15 @@ const Container = styled.div`
   padding: 20px;
 `;
 
-const Title = styled.h2`
-  font-size: 2em;
-  color: #333;
-  margin-bottom: 20px;
+// const Title = styled.h2`
+//   font-size: 2em;
+//   color: #333;
+//   margin-bottom: 20px;
 
-  @media (max-width: 768px) {
-    font-size: 1.5em;
-  }
-`;
+//   @media (max-width: 768px) {
+//     font-size: 1.5em;
+//   }
+// `;
 
 const ScrollingContainer = styled.div`
   display: flex;
@@ -116,7 +117,7 @@ const Testimonial = styled.div`
 const SocialProof = () => {
   return (
     <Container>
-      <Title>Some Previous Transformations</Title>
+      {/* <Title>Some Previous Transformations</Title> */}
       <ScrollingContainer aria-label="Image and testimonial scrolling showcase">
         {/* Images Slider */}
         <ImageSlider aria-label="Previous transformations">

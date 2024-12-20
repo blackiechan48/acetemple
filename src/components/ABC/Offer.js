@@ -67,43 +67,38 @@ const BoxText = styled.p`
 const Offer = () => {
   return (
     <OfferContainer>
-      <Title>Why This Challenge Will Works for You!</Title>
+      <Title>Why This Challenge Will Work for You!</Title>
       <BoxesWrapper>
         <Box>
-          <Image src="/Image 28-12-2020 at 09.22.JPG" alt="Expert Workouts" />
-          <BoxTitle>Workouts Tailored to You, Not the Masses</BoxTitle>
-          <BoxText>Your body, your goals, your plan. Forget cookie-cutter workouts. 
-            Every session is personalized to match your fitness level and progress, 
-            ensuring you get the best results efficiently and safely.</BoxText>
+          <Image src="/images/workouticon.png" alt="Expert Workouts" />
+          <BoxTitle>Sculpt a Stronger, Healthier Body w</BoxTitle>
+          <BoxText>Personalised workouts designed for your goals and 
+            fitness level—no cookie-cutter routines..</BoxText>
         </Box>
         <Box>
-          <Image src="/Image 28-12-2020 at 09.22.JPG" alt="Progress Tracking" />
-          <BoxTitle>Nutrition Made Simple and Sustainable</BoxTitle>
-          <BoxText>Eat for results without giving up the foods you love. With customized 
-            calorie and macronutrient targets, flexible meal plans, and delicious recipes, 
-            you’ll learn how to fuel your body for fat loss and strength without feeling 
-            deprived.</BoxText>
+          <Image src="/images/nutritionicon.png" alt="Progress Tracking" />
+          <BoxTitle>Enjoy Delicious, Simple Meals </BoxTitle>
+          <BoxText>Fuel your progress with flexible meal plans and tasty recipes—no 
+            confusing diets or deprivation.</BoxText>
         </Box>
         <Box>
-          <Image src="/path/to/image3.jpg" alt="Community Support" />
-          <BoxTitle>Learn Skills You’ll Keep for Life</BoxTitle>
-          <BoxText>This isn’t a quick fix—it’s an education. From understanding workouts to 
-            mastering nutrition, this challenge equips you with tools to sustain your progress
-             long after the 8 weeks are over.</BoxText>
+          <Image src="/images/supporticon.png" alt="Community Support" />
+          <BoxTitle>Build Lasting Healthy Habits </BoxTitle>
+          <BoxText>Learn essential fitness and nutrition skills to keep making great 
+             choices long after the 8 weeks end.</BoxText>
         </Box>
         <Box>
-          <Image src="/path/to/image4.jpg" alt="Rewards System" />
-          <BoxTitle>Motivation from a Like-Minded Community</BoxTitle>
-          <BoxText>Never feel alone on your journey. Stay inspired and 
-            accountable with group activities, friendly competitions, and a 
-            supportive environment that celebrates every win.</BoxText>
+          <Image src="/images/reward.webp" alt="Rewards System" />
+          <BoxTitle>Thrive in a Supportive Community</BoxTitle>
+          <BoxText>Stay motivated and accountable with like-minded participants
+             who celebrate every success.</BoxText>
         </Box>
         <Box>
-          <Image src="/path/to/image4.jpg" alt="Rewards System" />
-          <BoxTitle>Stay on Track with Expert Guidance</BoxTitle>
-          <BoxText>We’re in this together. With regular catch ups, 
-            progress tracking, and tailored feedback, you’ll always 
-            know exactly where you stand and what to adjust for maximum results.</BoxText>
+          <Image src="/images/guidance.png" alt="Rewards System" />
+          <BoxTitle>Progress with Expert Guidance
+          </BoxTitle>
+          <BoxText>Regular check-ins, tailored feedback, and clear next steps ensure
+             you always know how to move forward.</BoxText>
         </Box>
       </BoxesWrapper>
     </OfferContainer>

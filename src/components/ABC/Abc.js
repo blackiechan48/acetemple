@@ -18,12 +18,13 @@ const Abc = () => {
     return (
       <>
         <HeroAbc />
+        <SocialProof />
         <GuaranteeBanner />
         <Introduction />
         <ChallengeIntroduction />
         <MeetInstructor/>
         <BeforeAfterSection />
-        <SocialProof />
+        <JoinChallenge />
         <Offer />
         <VideoTestimonial
         title="Still Not Convinced?"

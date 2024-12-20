@@ -78,8 +78,8 @@ const CTAButton = styled.a`
 const ChallengeIntroduction = () => {
   return (
     <ChallengeIntroContainer>
-      <ChallengeLogo src="/path/to/logo.png" alt="ACE Challenge Logo" />
-      <Title>Welcome to the Ace Body Transformation Challenge</Title>
+      <ChallengeLogo src="/IMG_9126.jpg" alt="ACE Challenge Logo" />
+      <Title>Welcome to the ACE Body Transformation Challenge</Title>
       <Subtitle>It’s not just about losing weight or gaining muscle…</Subtitle>
       <Paragraph>
         <HighlightedText>It’s about transforming your life.</HighlightedText>

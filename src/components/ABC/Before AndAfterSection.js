@@ -50,36 +50,6 @@ const ImageWrapper = styled.div`
     height: auto;
     display: block;
   }
-
-  &::before {
-    content: attr(data-label);
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: #f05454; /* Red */
-    color: white;
-    padding: 5px 10px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 5px;
-
-    @media (max-width: 768px) {
-      font-size: 0.8rem;
-      top: 5px;
-      left: 5px;
-    }
-  }
-`;
-
-const Caption = styled.div`
-  padding: 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #222831; /* Black */
-
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-  }
 `;
 
 // Component
@@ -90,71 +60,67 @@ const BeforeAfterSection = () => {
       <BeforeAfterGrid>
         {/* Transformation Card 1 */}
         <TransformationCard>
-          <ImageWrapper data-label="Before">
+          <ImageWrapper>
             <img
-              src="https://via.placeholder.com/300x400" // Replace with actual "Before" image URL
-              alt="Before Transformation"
+              src="/images/Before and afters/Kandy.png" // Replace with actual "Before" image URL
+              alt="Transformation 1"
             />
           </ImageWrapper>
-          <ImageWrapper data-label="After">
+          <ImageWrapper>
             <img
-              src="https://via.placeholder.com/300x400" // Replace with actual "After" image URL
-              alt="After Transformation"
+              src="/images/Before and afters/Ali.jpg" // Replace with actual "After" image URL
+              alt="Transformation 1"
             />
           </ImageWrapper>
-          <Caption>John's 8-Week Transformation</Caption>
         </TransformationCard>
 
         {/* Transformation Card 2 */}
         <TransformationCard>
-          <ImageWrapper data-label="Before">
+          <ImageWrapper>
             <img
-              src="/IMG_9793.jpg" // Replace with actual "Before" image URL
-              alt="Before Transformation"
+              src="/images/Before and afters/sike.jpg" // Replace with actual "Before" image URL
+              alt="Transformation 2"
             />
           </ImageWrapper>
-          <ImageWrapper data-label="After">
+          <ImageWrapper>
             <img
-              src="/IMG_8645.JPG" // Replace with actual "After" image URL
-              alt="After Transformation"
+              src="/images/Before and afters/Rita.png" // Replace with actual "After" image URL
+              alt="Transformation 2"
             />
           </ImageWrapper>
-          <Caption>Sarah's 8-Week Transformation</Caption>
-        </TransformationCard>
-        {/* Transformation Card 2 */}
-        <TransformationCard>
-          <ImageWrapper data-label="Before">
-            <img
-              src="/IMG_9793.jpg" // Replace with actual "Before" image URL
-              alt="Before Transformation"
-            />
-          </ImageWrapper>
-          <ImageWrapper data-label="After">
-            <img
-              src="/IMG_8645.JPG" // Replace with actual "After" image URL
-              alt="After Transformation"
-            />
-          </ImageWrapper>
-          <Caption>Sarah's 8-Week Transformation</Caption>
-        </TransformationCard>
-        {/* Transformation Card 2 */}
-        <TransformationCard>
-          <ImageWrapper data-label="Before">
-            <img
-              src="/IMG_9793.jpg" // Replace with actual "Before" image URL
-              alt="Before Transformation"
-            />
-          </ImageWrapper>
-          <ImageWrapper data-label="After">
-            <img
-              src="/IMG_8645.JPG" // Replace with actual "After" image URL
-              alt="After Transformation"
-            />
-          </ImageWrapper>
-          <Caption>Sarah's 8-Week Transformation</Caption>
         </TransformationCard>
 
-        {/* Add more cards as needed */}
+        {/* Transformation Card 3 */}
+        <TransformationCard>
+          <ImageWrapper>
+            <img
+              src="/images/Before and afters/Monica.png" // Replace with actual "Before" image URL
+              alt="Transformation 3"
+            />
+          </ImageWrapper>
+          <ImageWrapper>
+            <img
+              src="/images/Before and afters/Saskia.png" // Replace with actual "After" image URL
+              alt="Transformation 3"
+            />
+          </ImageWrapper>
+        </TransformationCard>
+
+        {/* Transformation Card 4 */}
+        <TransformationCard>
+          <ImageWrapper>
+            <img
+              src="/images/Before and afters/Tiphaine.PNG" // Replace with actual "Before" image URL
+              alt="Transformation 4"
+            />
+          </ImageWrapper>
+          <ImageWrapper>
+            <img
+              src="/images/Before and afters/PAidab.png" // Replace with actual "After" image URL
+              alt="Transformation 4"
+            />
+          </ImageWrapper>
+        </TransformationCard>
       </BeforeAfterGrid>
     </BeforeAfterContainer>
   );
