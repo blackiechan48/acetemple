@@ -96,21 +96,12 @@ const CTAButton = styled.a`
   }
 `;
 
-const SpacesLeftText = styled.div`
-  margin-top: 10px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #f05454; /* Red */
-
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-  }
-`;
+c
 
 // Component
 const HeroAbc = () => {
   const [timeLeft, setTimeLeft] = useState('');
-  const [spacesLeft, setSpacesLeft] = useState(17); // Initialize spaces left
+  
 
   // Countdown Timer
   useEffect(() => {
