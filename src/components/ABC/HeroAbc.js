@@ -104,29 +104,28 @@ const HeroAbc = () => {
   
 
   // Countdown Timer
-  useEffect(() => {
-    const targetDate = new Date(); // Set the countdown end date
-    targetDate.setDate(targetDate.getDate() + 5); // Example: 5 days from today
+useEffect(() => {
+  const targetDate = new Date('December 30, 2024 23:59:59'); // Set the countdown end date to December 30, 2023
 
-    const interval = setInterval(() => {
-      const now = new Date();
-      const difference = targetDate - now;
+  const interval = setInterval(() => {
+    const now = new Date();
+    const difference = targetDate - now;
 
-      if (difference <= 0) {
-        clearInterval(interval);
-        setTimeLeft('Enrollment is now closed!');
-      } else {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    if (difference <= 0) {
+      clearInterval(interval);
+      setTimeLeft('Enrollment is now closed!');
+    } else {
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-        setTimeLeft(`${days}d ${hours}h ${minutes}m ${seconds}s`);
-      }
-    }, 1000);
+      setTimeLeft(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+    }
+  }, 1000);
 
-    return () => clearInterval(interval);
-  }, []);
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <HeaderContainer>
