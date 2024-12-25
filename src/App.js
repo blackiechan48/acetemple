@@ -13,15 +13,17 @@ import PTPage from './components/Services/PTPage';
 import ChallengeLanding from './components/Services/8Weeks challenge/ChallengeLanding'
 import ChallengeThanks from './components/Services/8Weeks challenge/ChallengeThanks';
 import OnlineCoaching from './components/Services/OnlineCoaching';
+import TransformationChallenge from './components/Services/8Weeks challenge/TransformationChallenge';
 import ChallengeClosedPage from './components/Services/8Weeks challenge/ChallengeClosedPage';
 // import AdventCalendarPage from './components/AdventCalendarPage';
 import PrivacyPolicy from './components/Legal/PrivacyPolicy';
 import TermsAndConditions from './components/Legal/TermsAndConditions';
 import ScrollToTopArrow from './components/HomePage/ScrollToTopArrow';
 import NotFoundPage from './NotFoundPage';
+import Abc from './components/ABC/Abc';
 
 
-// Initialize Google Analytics and Facebook Pixel
+// Initialize Google An 3alytics and Facebook Pixel
 initializeGoogleAnalytics('G-LXC8PNRGF7'); 
 initializeFacebookPixel('354506591072910'); 
 
@@ -53,12 +55,14 @@ const App = () => {
         <Route path="/personaltraining" element={<PTPage />} />
         <Route path="/online-coaching" element={<OnlineCoaching />} />
         <Route path="/challenge-closed" element={<ChallengeClosedPage />} />
+        <Route path="/transformation-challenge" element={<TransformationChallenge/>} />
         {/* <Route path="/advent-calendar" element={<AdventCalendarPage />} />g */}
         <Route path="/transformation-start-here" element={<ChallengeLanding />} />
         <Route path="/Youre-in" element={<ChallengeThanks />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/body-Transformation" element={<Abc/>} />
       </Routes>
       <ScrollToTopArrow />
       <Footer />
