@@ -105,7 +105,7 @@ const HeroAbc = () => {
 
   // Countdown Timer
 useEffect(() => {
-  const targetDate = new Date('December 30, 2024 23:59:59'); // Set the countdown end date to December 30, 2023
+  const targetDate = new Date('January 3, 2025 23:59:59'); // Set the countdown end date to December 30, 2023
 
   const interval = setInterval(() => {
     const now = new Date();
@@ -139,7 +139,7 @@ useEffect(() => {
       </CountdownContainer>
       <VideoContainer>
         <iframe
-          src="https://www.youtube.com/embed/example" // Replace with your video link
+          src="https://www.youtube.com/embed/W3IBmaMuxag" // Replace with your video link
           title="Challenge Introduction Video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

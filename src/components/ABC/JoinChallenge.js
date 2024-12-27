@@ -86,7 +86,7 @@ const JoinChallengeCard = () => {
       <Subtitle>NORMALLY £180</Subtitle>
       <Price>
         £120
-        <span>Use code <strong>EARLY BIRD</strong> at checkout</span>
+        <span>Use code <strong>EARLY </strong> at checkout</span>
       </Price>
       <FeaturesList>
         <li>8-week personalized training & nutrition plan</li>

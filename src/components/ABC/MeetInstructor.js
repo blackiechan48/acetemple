@@ -34,7 +34,7 @@ const Title = styled.h2`
 const Image = styled.img`
   width: 150px;
   height: 150px;
-  border-radius: 50%;
+  border-radius: 10%;
   object-fit: cover;
   margin: 20px 0;
 
@@ -61,7 +61,7 @@ const MeetInstructor = () => {
     <SectionContainer>
       <ContentWrapper>
         <Title>Meet Your Coach: Olu Olayeni</Title>
-        <Image src="images/about/91459155_583390222269401_3230648346903157205_n.jpg" alt="Olu Olayeni" />
+        <Image src="/images/in egypt.png" alt="Olu Olayeni" />
         <Text>
         A Birmingham-based personal trainer and proud dad, I’ve dedicated my career to 
         helping people transform their lives through fitness. Since 2015, I’ve guided 
