@@ -105,7 +105,7 @@ const HeroAbc = () => {
 
   // Countdown Timer
 useEffect(() => {
-  const targetDate = new Date('January 3, 2025 23:59:59'); // Set the countdown end date to December 30, 2023
+  const targetDate = new Date('January 3, 2025 23:59:59'); 
 
   const interval = setInterval(() => {
     const now = new Date();
