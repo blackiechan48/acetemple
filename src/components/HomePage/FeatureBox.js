@@ -118,12 +118,12 @@ const FeatureBoxes = () => {
           <a href="/online-coaching">Find Out More</a>
         </FeatureBox>
         <FeatureBox>
-          <img src="/images/acebody.png" alt="Challenges" />
-          <h3>Challenges</h3>
+          <img src="/images/abtclogo.png" alt="Challenges" />
+          <h3>Body Transformation Challenge</h3>
           <p>Join our fitness challenges and push your limits.</p>
           <p>Work alongside like-minded individuals in a supportive community to reach your fitness goals.</p>
-          {/* <a href="/8weekschallenge">Find Out More</a> */}
-          <a href="/challenge-closed">Find Out More</a>
+          {/* <a href="/challenge-closed">Find Out More</a> */}
+          <a href="/body-Transformation">Find Out More</a>
         </FeatureBox>
       </FeatureBoxesContainer>
     </>
