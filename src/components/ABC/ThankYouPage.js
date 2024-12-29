@@ -74,7 +74,7 @@ const ThankYouPage = () => {
       
       <VideoContainer>
         <iframe
-          src="https://www.youtube.com/embed/W3IBmaMuxag" // Replace with your YouTube video link
+          src="https://www.youtube.com/embed/uwU-kMo8uUk" // Replace with your YouTube video link
           title="Welcome to the Challenge"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
