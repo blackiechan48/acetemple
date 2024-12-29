@@ -21,6 +21,7 @@ import TermsAndConditions from './components/Legal/TermsAndConditions';
 import ScrollToTopArrow from './components/HomePage/ScrollToTopArrow';
 import NotFoundPage from './NotFoundPage';
 import Abc from './components/ABC/Abc';
+import ThankYouPage from './components/ABC/ThankYouPage'
 
 
 // Initialize Google An 3alytics and Facebook Pixel
@@ -63,6 +64,7 @@ const App = () => {
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/body-Transformation" element={<Abc/>} />
+        <Route path="/You-are-in" element={<ThankYouPage/>} />
       </Routes>
       <ScrollToTopArrow />
       <Footer />
