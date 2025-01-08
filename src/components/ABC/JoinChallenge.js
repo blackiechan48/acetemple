@@ -83,10 +83,10 @@ const JoinChallengeCard = () => {
   return (
     <ChallengeContainer>
       <Title>THE BODY TRANSFORMATION CHALLENGE</Title>
-      <Subtitle>NORMALLY £180</Subtitle>
+      {/* <Subtitle>NORMALLY £180</Subtitle> */}
       <Price>
-        £120
-        <span>Use code <strong>EARLY </strong> at checkout</span>
+        £180
+        {/* <span>Use code <strong>EARLY </strong> at checkout</span> */}
       </Price>
       <FeaturesList>
         <li>8-week personalized training & nutrition plan</li>
