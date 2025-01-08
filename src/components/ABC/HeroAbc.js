@@ -134,7 +134,7 @@ useEffect(() => {
       </Title>
       <Subtitle>80% of people fail their fitness goals without the right plan. Don't be a statistic.</Subtitle>
       <CountdownContainer>
-        <SmallText>Early bird enrollment closes in:</SmallText>
+        <SmallText>Enrollment closes in:</SmallText>
         <CountdownText>{timeLeft}</CountdownText>
       </CountdownContainer>
       <VideoContainer>
