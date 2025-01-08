@@ -105,7 +105,7 @@ const HeroAbc = () => {
 
   // Countdown Timer
 useEffect(() => {
-  const targetDate = new Date('January 5, 2025 23:59:59'); 
+  const targetDate = new Date('January 10, 2025 23:59:59'); 
 
   const interval = setInterval(() => {
     const now = new Date();
