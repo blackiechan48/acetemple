@@ -13,7 +13,6 @@ import PTPage from './components/Services/PTPage';
 import ChallengeLanding from './components/Services/8Weeks challenge/ChallengeLanding'
 import ChallengeThanks from './components/Services/8Weeks challenge/ChallengeThanks';
 import OnlineCoaching from './components/Services/OnlineCoaching';
-// import TransformationChallenge from './components/Services/8Weeks challenge/TransformationChallenge';
 import ChallengeClosedPage from './components/Services/8Weeks challenge/ChallengeClosedPage';
 // import AdventCalendarPage from './components/AdventCalendarPage';
 import PrivacyPolicy from './components/Legal/PrivacyPolicy';
@@ -56,8 +55,7 @@ const App = () => {
         <Route path="/personaltraining" element={<PTPage />} />
         <Route path="/online-coaching" element={<OnlineCoaching />} />
         <Route path="/challenge" element={<ChallengeClosedPage />} />
-        {/* <Route path="/transformation-challenge" element={<TransformationChallenge/>} /> */}
-        <Route path="/advent-calendar" element={<AdventCalendarPage />} />
+        {/* <Route path="/advent-calendar" element={<AdventCalendarPage />} /> */}
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="*" element={<NotFoundPage />} />
