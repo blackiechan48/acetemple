@@ -10,8 +10,6 @@ import AboutPage from './components/AboutPage';
 import ServicesPage from './components/Services/ServicePage';
 import Testimonials from './components/Testimonials';
 import PTPage from './components/Services/PTPage';
-// import ChallengeLanding from './components/Services/8Weeks challenge/ChallengeLanding'
-// import ChallengeThanks from './components/Services/8Weeks challenge/ChallengeThanks';
 import OnlineCoaching from './components/Services/OnlineCoaching';
 import ChallengeClosedPage from './components/Services/8Weeks challenge/ChallengeClosedPage';
 // import AdventCalendarPage from './components/AdventCalendarPage';

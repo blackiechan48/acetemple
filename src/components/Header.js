@@ -99,10 +99,9 @@ const Header = () => {
         <NavLink href="/About">About</NavLink>
         <NavLink href="/testimonials">Testimonials</NavLink>
         <NavLink href="/services">Services</NavLink>
-        {/* <NavLink href="/challenge">Ace Body Challenge</NavLink> */}
-        {/* <NavLink href="/transformation-challenge">8 Weeks Challenge</NavLink> */}
+        <NavLink href="/challenge">Ace Body Challenge</NavLink>
         {/* <NavLink href="/advent-calendar">Advent calendar</NavLink>  */}
-        <NavLink href="/body-Transformation">Ace Body Challenge</NavLink>
+        {/* <NavLink href="/body-Transformation">Ace Body Challenge</NavLink> */}
         {/* <NavLink href="/landing">Landing Page</NavLink> */}
       </Nav>
     </HeaderContainer>
