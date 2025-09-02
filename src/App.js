@@ -19,6 +19,8 @@ import ScrollToTopArrow from './components/HomePage/ScrollToTopArrow';
 import NotFoundPage from './NotFoundPage';
 import Abc from './components/ABC/Abc';
 import ThankYouPage from './components/ABC/ThankYouPage'
+import ThirtyDays from './components/30Days';
+
 
 
 // Initialize Google An 3alytics and Facebook Pixel
@@ -59,6 +61,8 @@ const App = () => {
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/body-Transformation" element={<Abc/>} />
         <Route path="/You-are-in" element={<ThankYouPage/>} />
+        <Route path="/30days" element={<ThirtyDays />} />
+
       </Routes>
       <ScrollToTopArrow />
       <Footer />
