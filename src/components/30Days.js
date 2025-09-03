@@ -1,7 +1,6 @@
 // src/components/30Days.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Header from './Header';
 
 const PageContainer = styled.div`
   min-height: 100vh;
@@ -117,7 +116,6 @@ const ThirtyDays = () => {
 
   return (
     <PageContainer>
-      <Header />
       <ContentWrapper>
         <Card>
           <Headline>30 Days, 30 Shifts &amp; 1 Breakthrough for Fat Loss</Headline>
