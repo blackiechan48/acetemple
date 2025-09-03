@@ -15,14 +15,13 @@ const app = express();
 // ✅ CORS configuration
 const allowedOrigins = [
   'http://localhost:3000',        // Local dev
-  'https://acetemple.netlify.app', // Netlify default domain (backup)
-  'https://acetemple.com'          // ✅ Custom Netlify domain
+  'https://acetemple.netlify.app', // Netlify fallback
+  'https://acetemple.com'          // ✅ Custom domain
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (like curl/Postman)
-    if (!origin) return callback(null, true);
+    if (!origin) return callback(null, true); // allow curl/Postman
     if (allowedOrigins.includes(origin)) {
       return callback(null, true);
     } else {
@@ -31,7 +30,6 @@ app.use(cors({
   }
 }));
 
-// Middleware
 app.use(bodyParser.json());
 
 /* ------------------- Consultation Form ------------------- */
@@ -64,7 +62,7 @@ app.post('/api/consultation', async (req, res) => {
 
 /* ------------------- Mailchimp Subscribe ------------------- */
 app.post('/api/subscribe', async (req, res) => {
-  const { email } = req.body;
+  const { email, firstName } = req.body;
 
   if (!email) {
     return res.status(400).json({ message: 'Email is required' });
@@ -82,6 +80,9 @@ app.post('/api/subscribe', async (req, res) => {
         body: JSON.stringify({
           email_address: email,
           status: 'subscribed',
+          merge_fields: {
+            FNAME: firstName || ''
+          }
         }),
       }
     );

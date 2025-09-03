@@ -1,4 +1,3 @@
-// src/components/30Days.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
@@ -85,6 +84,7 @@ const Message = styled.p`
 `;
 
 const ThirtyDays = () => {
+  const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('');
 
@@ -96,13 +96,14 @@ const ThirtyDays = () => {
       const response = await fetch('https://acetemple.onrender.com/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ firstName, email }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
         setStatus('success');
+        setFirstName('');
         setEmail('');
       } else {
         setStatus('error');
@@ -120,12 +121,19 @@ const ThirtyDays = () => {
         <Card>
           <Headline>30 Days, 30 Shifts &amp; 1 Breakthrough for Fat Loss</Headline>
           <Subheadline>
-            Lose fat, build strength, and feel sexy again,without giving up carbs,
+            Lose fat, build strength, and feel sexy again — without giving up carbs,
             wine, or your social life. <br />
             Daily emails straight to your inbox. Free. No fluff, just results.
           </Subheadline>
 
           <Form onSubmit={handleSubscribe}>
+            <Input
+              type="text"
+              placeholder="Enter your first name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              required
+            />
             <Input
               type="email"
               placeholder="Enter your email"
@@ -138,7 +146,7 @@ const ThirtyDays = () => {
 
           {status === 'loading' && <Message>Submitting...</Message>}
           {status === 'success' && (
-            <Message type="success"> Thank you, you should receive your first email within 5 minutes! 🎉</Message>
+            <Message type="success">Subscribed successfully! 🎉</Message>
           )}
           {status === 'error' && (
             <Message type="error">Subscription failed. Try again.</Message>
