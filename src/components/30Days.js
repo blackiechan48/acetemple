@@ -1,7 +1,7 @@
 // src/components/30Days.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
+import Header from './Header';
 
 const PageContainer = styled.div`
   min-height: 100vh;
@@ -16,7 +16,7 @@ const ContentWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-  background-color: rgba(0, 0, 0, 0.6); /* dark overlay for readability */
+  background-color: rgba(0, 0, 0, 0.6);
 `;
 
 const Card = styled.div`
@@ -85,7 +85,6 @@ const Message = styled.p`
     props.type === 'success' ? 'green' : props.type === 'error' ? 'red' : '#333'};
 `;
 
-// Component
 const ThirtyDays = () => {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('');
@@ -95,7 +94,7 @@ const ThirtyDays = () => {
     setStatus('loading');
 
     try {
-      const response = await fetch('/api/subscribe', {
+      const response = await fetch('https://acetemple.onrender.com/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
@@ -118,11 +117,12 @@ const ThirtyDays = () => {
 
   return (
     <PageContainer>
+      <Header />
       <ContentWrapper>
         <Card>
           <Headline>30 Days, 30 Shifts &amp; 1 Breakthrough for Fat Loss</Headline>
           <Subheadline>
-            Lose fat, build strength, and feel sexy again — without giving up carbs,
+            Lose fat, build strength, and feel sexy again,without giving up carbs,
             wine, or your social life. <br />
             Daily emails straight to your inbox. Free. No fluff, just results.
           </Subheadline>
@@ -140,7 +140,7 @@ const ThirtyDays = () => {
 
           {status === 'loading' && <Message>Submitting...</Message>}
           {status === 'success' && (
-            <Message type="success">Subscribed successfully! 🎉</Message>
+            <Message type="success"> Thank you, you should receive your first email within 5 minutes! 🎉</Message>
           )}
           {status === 'error' && (
             <Message type="error">Subscription failed. Try again.</Message>

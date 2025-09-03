@@ -4,29 +4,37 @@ import bodyParser from 'body-parser';
 import nodemailer from 'nodemailer';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import fetch from 'node-fetch'; // for Mailchimp API calls
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import fetch from 'node-fetch';
 
-// Fix __dirname for ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// Load environment variables
+dotenv.config();
 
-// Load environment variables from Server/.env
-dotenv.config({ path: `${__dirname}/.env` });
-
-// Debug logs to confirm env vars are loaded
-console.log("📂 ENV TEST:");
-console.log("MAILCHIMP_API_KEY:", process.env.MAILCHIMP_API_KEY);
-console.log("MAILCHIMP_SERVER_PREFIX:", process.env.MAILCHIMP_SERVER_PREFIX);
-console.log("MAILCHIMP_LIST_ID:", process.env.MAILCHIMP_LIST_ID);
-
-// Initialize Express app
+// Initialize Express
 const app = express();
-app.use(bodyParser.json());
-app.use(cors());
 
-/* ------------------- CONSULTATION FORM (EXISTING) ------------------- */
+// ✅ CORS configuration
+const allowedOrigins = [
+  'http://localhost:3000',        // Local dev
+  'https://acetemple.netlify.app', // Netlify default domain (backup)
+  'https://acetemple.com'          // ✅ Custom Netlify domain
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like curl/Postman)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error(`Not allowed by CORS: ${origin}`));
+    }
+  }
+}));
+
+// Middleware
+app.use(bodyParser.json());
+
+/* ------------------- Consultation Form ------------------- */
 app.post('/api/consultation', async (req, res) => {
   const { name, email, phone, goal, obstacles, isReady } = req.body;
 
@@ -43,23 +51,18 @@ app.post('/api/consultation', async (req, res) => {
       from: process.env.EMAIL,
       to: 'info@acetemple.com',
       subject: 'New Consultation Request',
-      text: `Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Goal: ${goal}
-Obstacles: ${obstacles}
-Ready to commit: ${isReady}`,
+      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nGoal: ${goal}\nObstacles: ${obstacles}\nReady to commit: ${isReady}`,
     };
 
     await transporter.sendMail(mailOptions);
     res.status(200).json({ message: 'Form submitted successfully' });
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error('❌ Error sending email:', error);
     res.status(500).json({ message: 'Failed to submit form' });
   }
 });
 
-/* ------------------- NEW: MAILCHIMP SUBSCRIBE ------------------- */
+/* ------------------- Mailchimp Subscribe ------------------- */
 app.post('/api/subscribe', async (req, res) => {
   const { email } = req.body;
 
@@ -68,42 +71,37 @@ app.post('/api/subscribe', async (req, res) => {
   }
 
   try {
-    const url = `https://${process.env.MAILCHIMP_SERVER_PREFIX}.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_LIST_ID}/members`;
-
-    console.log('📡 Mailchimp request to:', url);
-
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Authorization': `apikey ${process.env.MAILCHIMP_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email_address: email,
-        status: 'subscribed',
-      }),
-    });
+    const response = await fetch(
+      `https://${process.env.MAILCHIMP_SERVER_PREFIX}.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_LIST_ID}/members`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `apikey ${process.env.MAILCHIMP_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email_address: email,
+          status: 'subscribed',
+        }),
+      }
+    );
 
     const data = await response.json();
 
     if (!response.ok) {
       console.error('❌ Mailchimp error:', data);
-      return res.status(response.status).json({
-        message: 'Failed to subscribe user',
-        error: data,
-      });
+      return res
+        .status(response.status)
+        .json({ message: 'Failed to subscribe user', error: data });
     }
 
-    console.log('✅ Mailchimp success:', data);
-    res.status(200).json({ message: 'Subscription successful!', data });
+    res.status(200).json({ message: '✅ Subscription successful!', data });
   } catch (error) {
-    console.error('🔥 Server error subscribing user:', error);
+    console.error('🔥 Server error:', error);
     res.status(500).json({ message: 'Internal server error', error: error.message });
   }
 });
 
-/* ------------------- START SERVER ------------------- */
+/* ------------------- Start Server ------------------- */
 const PORT = process.env.PORT || 5002;
-app.listen(PORT, '0.0.0.0', () =>
-  console.log(`Server running on port ${PORT}`)
-);
+app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
