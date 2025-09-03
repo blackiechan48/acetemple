@@ -146,7 +146,7 @@ const ThirtyDays = () => {
 
           {status === 'loading' && <Message>Submitting...</Message>}
           {status === 'success' && (
-            <Message type="success">Subscribed successfully! 🎉</Message>
+            <Message type="success"> Great, you should receive your first email within 5 minutes🎉</Message>
           )}
           {status === 'error' && (
             <Message type="error">Subscription failed. Try again.</Message>
